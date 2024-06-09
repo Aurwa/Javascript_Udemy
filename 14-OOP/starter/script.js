@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 const Person = function (username, birthYear) {
   this.username = username;
   this.birthYear = birthYear;
@@ -30,3 +31,45 @@ console.dir(Person.prototype.constructor);
 
 const arr = [1, 2, 3, 4, 5];
 console.log(arr.__proto__ === Array.prototype);
+*/
+
+const Person = function (username, birthYear) {
+  this.username = username;
+  this.birthYear = birthYear;
+};
+
+const jonas = new Person('Jonas', 1991);
+//console.log(jonas);
+
+//console.log(jonas instanceof Person);
+//console.log(jonas.__proto__ === Person.prototype);
+
+// Coding Challenge One //
+
+const Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+  // this.accelerate = function () {
+  //   console.log(this.speed + 10);
+  // };
+
+  // this.brake = function () {
+  //   console.log(this.speed - 5);
+  // };
+};
+
+const car1 = new Car('BMW', 120);
+
+Car.prototype.accelerate = function () {
+  this.speed += 10;
+  console.log(this.speed);
+};
+
+Car.prototype.brake = function () {
+  this.speed -= 5;
+  console.log(this.speed);
+};
+car1.accelerate();
+car1.accelerate();
+
+car1.brake();
