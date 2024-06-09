@@ -76,24 +76,85 @@ car1.accelerate();
 car1.brake();
 */
 
-// Classes in JS
+// ************* Classes in JS *************
 
 // class expression
 //const PersonCl = class {
 
 //}
 
+/*
 // Class Declaration
 class PersonCl {
-  constructor(firstName, birthYear) {
-    this.firstName = firstName;
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
     this.birthYear = birthYear;
   }
 
   calcAge() {
     console.log(2024 - this.birthYear);
   }
+
+  get greet() {
+    return `Hello ${this.firstName}`;
+  }
+
+  set fullName(name) {
+    console.log(name);
+    if (name.includes(' ')) {
+      this._fullName = name;
+    } else {
+      alert(`${name} is not a full name!`);
+    }
+  }
 }
 
-const jessica = new PersonCl('jessica', 1996);
-jessica.calcAge();
+const jessica = new PersonCl('Jessica Davis', 1996);
+console.log(jessica);
+//jessica.calcAge();
+*/
+
+/// ***** ES6 Classes part 2 ******
+
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+
+  set fullName(name) {
+    if (name.includes(' ')) {
+      this._fullName = name;
+    } else {
+      alert(`${name} is not a full name!`);
+    }
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
+}
+
+const jessica = new PersonCl('Jessica Davis', 1996);
+const walter = new PersonCl('Walter', 1990);
+console.log(jessica);
+
+// ********* Getters & Setters **********
+
+const account = {
+  owner: 'Jonas',
+  movements: [200, 530, 100, 300],
+
+  get latest() {
+    return this.movements.slice(-1).pop();
+  },
+
+  set latest(mov) {
+    return this.movements.push(mov);
+  },
+};
+
+console.log(account.latest);
+
+account.latest = 50;
+console.log(account.movements);
