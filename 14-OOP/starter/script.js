@@ -76,14 +76,14 @@ car1.accelerate();
 car1.brake();
 */
 
-// ************* Classes in JS *************
-
+// ****** Classes in JS ********
+/*
 // class expression
 //const PersonCl = class {
 
 //}
 
-/*
+
 // Class Declaration
 class PersonCl {
   constructor(fullName, birthYear) {
@@ -114,7 +114,8 @@ console.log(jessica);
 //jessica.calcAge();
 */
 
-/// ***** ES6 Classes part 2 ******
+// ***** ES6 Classes part 2 ******
+/*
 
 class PersonCl {
   constructor(fullName, birthYear) {
@@ -138,7 +139,37 @@ class PersonCl {
 const jessica = new PersonCl('Jessica Davis', 1996);
 const walter = new PersonCl('Walter', 1990);
 console.log(jessica);
+*/
 
+// ******* CODING CHALLENGE 2 ********/
+/*
+class CarCl {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed; // Speed in km/h
+  }
+
+  // Converts speed from mph to km/h
+  set speedUS(speed) {
+    this.speed = speed * 1.6;
+  }
+
+  // Converts speed from km/h to mph
+  get speedUS() {
+    return this.speed / 1.6;
+  }
+}
+
+const car1 = new CarCl('Ford', 120);
+console.log(car1.speedUS);
+car1.speedUS = 50;
+console.log(car1);
+
+// console.log(car1.speed);
+// console.log(car1.speedUS);
+*/
+
+/*
 // ********* Getters & Setters **********
 
 const account = {
@@ -158,3 +189,54 @@ console.log(account.latest);
 
 account.latest = 50;
 console.log(account.movements);
+
+*/
+
+// ********** Object.create ***********
+/*
+const PersonProto = {
+  calcAge() {
+    console.log(2024 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+// console.log(steven.__proto__ === PersonProto);
+// steven.name = 'Steven';
+// steven.birthYear = 2006;
+steven.init('Steven', 1998);
+steven.calcAge();
+
+const sarah = Object.create(PersonProto);
+*/
+
+// ********** INHERITANCE BETWEEN CLASSES USING CONSTRUCTOR FUNCTION *********
+
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2037 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  //Person.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const mike = new Student('Mike', 2020, 'Computer Science');
+mike.calcAge();
