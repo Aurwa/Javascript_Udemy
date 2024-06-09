@@ -33,6 +33,7 @@ const arr = [1, 2, 3, 4, 5];
 console.log(arr.__proto__ === Array.prototype);
 */
 
+/*
 const Person = function (username, birthYear) {
   this.username = username;
   this.birthYear = birthYear;
@@ -73,3 +74,26 @@ car1.accelerate();
 car1.accelerate();
 
 car1.brake();
+*/
+
+// Classes in JS
+
+// class expression
+//const PersonCl = class {
+
+//}
+
+// Class Declaration
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+
+  calcAge() {
+    console.log(2024 - this.birthYear);
+  }
+}
+
+const jessica = new PersonCl('jessica', 1996);
+jessica.calcAge();
