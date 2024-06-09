@@ -217,6 +217,7 @@ const sarah = Object.create(PersonProto);
 
 // ********** INHERITANCE BETWEEN CLASSES USING CONSTRUCTOR FUNCTION *********
 
+/*
 const Person = function (firstName, birthYear) {
   this.firstName = firstName;
   this.birthYear = birthYear;
@@ -240,3 +241,74 @@ Student.prototype.introduce = function () {
 
 const mike = new Student('Mike', 2020, 'Computer Science');
 mike.calcAge();
+*/
+
+// ****** Inheritance between ES6 Classes****
+
+/*
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+
+  calcAge() {
+    console.log(2024 - this.birthYear);
+  }
+
+  get greet() {
+    return `Hello ${this.firstName}`;
+  }
+
+  set fullName(name) {
+    console.log(name);
+    if (name.includes(' ')) {
+      this._fullName = name;
+    } else {
+      alert(`${name} is not a full name!`);
+    }
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
+}
+
+class StudentCl extends PersonCl {
+  constructor(fullName, birthYear, course) {
+    super(fullName, birthYear);
+    this.course = course;
+  }
+
+  introduce() {
+    console.log(`Hey. This is ${this._fullName}`);
+  }
+}
+
+const jessica = new StudentCl('Jessica Davis', 1996, 'Bioinformtics');
+jessica.introduce();
+*/
+
+// ***** Inheritance btwn classess object.create ******
+
+const PersonProto = {
+  calcAge() {
+    console.log(2024 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+
+const StudentProto = Object.create(PersonProto);
+
+StudentProto.init = function (firstName, birthYear, course) {
+  PersonProto.init.call(firstName, birthYear);
+  this.course = course;
+};
+
+const jay = Object.create(StudentProto);
