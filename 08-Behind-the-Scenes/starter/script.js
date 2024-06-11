@@ -1,5 +1,6 @@
 'use strict';
 
+/*
 // const a = 'Jonas';
 // first();
 
@@ -14,7 +15,10 @@
 // }
 
 // function third() {}
+*/
 
+// ******* SCOPE CHAIN *********
+/*
 function calcAge(birthYear) {
   const age = 2037 - birthYear;
 
@@ -40,3 +44,16 @@ function calcAge(birthYear) {
 
 const firstName = 'Jonas';
 calcAge(1991);
+*/
+
+// ******** Hoisting ********
+
+if (!numProducts) {
+  deleteShoppingCart();
+}
+
+var numProducts = 10;
+
+function deleteShoppingCart() {
+  console.log('All products are deleted.');
+}
