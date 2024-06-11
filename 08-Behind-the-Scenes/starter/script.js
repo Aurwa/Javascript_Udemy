@@ -1,1 +1,42 @@
 'use strict';
+
+// const a = 'Jonas';
+// first();
+
+// function first() {
+//   const b = 'Hello';
+//   second();
+
+//   function second() {
+//     const c = 'Hi';
+//     third();
+//   }
+// }
+
+// function third() {}
+
+function calcAge(birthYear) {
+  const age = 2037 - birthYear;
+
+  function printAge() {
+    const output = `${firstName}, you are ${age} years old born in ${birthYear}`;
+    console.log(output);
+
+    if (birthYear >= 1981 && birthYear <= 1996) {
+      const str = `Oh! You're a millenial ${firstName}`;
+      console.log(str);
+
+      function add(a, b) {
+        return a + b;
+      }
+
+      console.log(add(2, 2));
+    }
+  }
+
+  printAge();
+  return age;
+}
+
+const firstName = 'Jonas';
+calcAge(1991);
