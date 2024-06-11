@@ -47,7 +47,7 @@ calcAge(1991);
 */
 
 // ******** Hoisting ********
-
+/*
 if (!numProducts) {
   deleteShoppingCart();
 }
@@ -57,3 +57,19 @@ var numProducts = 10;
 function deleteShoppingCart() {
   console.log('All products are deleted.');
 }
+*/
+
+//  ****** This Keyword ******
+
+const jonas = {
+  firstName: 'Jonas',
+  year: 1991,
+  calcAge: function () {
+    console.log(this);
+    console.log(2037 - this.year);
+  },
+
+  greet: () => console.log(`Hey ${this.firstName}`),
+};
+
+jonas.greet();
