@@ -93,8 +93,8 @@ console.log(tasks);
 */
 
 // 3
-
-// Write a function listTasks() that prints all tasks in the array, each prefixed with its index.
+/*
+Write a function listTasks() that prints all tasks in the array, each prefixed with its index.
 
 const tasks = ["Design", "Development", "Testing", "Deployment"];
 
@@ -105,3 +105,29 @@ function listTasks() {
 }
 
 listTasks();
+*/
+
+const tasks = ["Design", "Development", "Testing", "Deployment"];
+
+function addTask(task) {
+  tasks.push(task);
+}
+
+addTask("Marketing");
+// console.log(tasks);
+
+function removeTask(task) {
+  const index = tasks.indexOf(task);
+  tasks.splice(index, 1);
+}
+
+removeTask("Design");
+// console.log(tasks);
+
+function listTasks() {
+  tasks.forEach((task, index) => {
+    console.log(`${index} : ${task}`);
+  });
+}
+
+//listTasks();
