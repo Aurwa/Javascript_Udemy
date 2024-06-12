@@ -131,3 +131,43 @@ function listTasks() {
 }
 
 //listTasks();
+
+const inventory = [
+  { id: 1, name: "Laptop", quantity: 4 },
+  { id: 2, name: "Smartphone", quantity: 10 },
+  { id: 3, name: "Tablet", quantity: 6 },
+];
+
+function addProduct(id, name, quantity) {
+  inventory.push({
+    id: id,
+    name: name,
+    quantity: quantity,
+  });
+}
+
+addProduct(4, "PC", 7);
+//console.log(inventory);
+
+// forEach
+// function updateQuantity(id, quantity) {
+//   inventory.forEach((item) => {
+//     if (item.id === id) {
+//       item.quantity = quantity;
+//     }
+//   });
+// }
+
+// for Loop
+function updateQuantity(id, quantity) {
+  for (let i = 0; i < inventory.length; i++) {
+    if (inventory[i].id === id) {
+      inventory[i].quantity = quantity;
+    }
+  }
+}
+
+updateQuantity(1, 10);
+//console.log(inventory);
+
+// function findProductByName(name)
