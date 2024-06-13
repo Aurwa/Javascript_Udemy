@@ -132,6 +132,7 @@ function listTasks() {
 
 //listTasks();
 
+/*
 const inventory = [
   { id: 1, name: "Laptop", quantity: 4 },
   { id: 2, name: "Smartphone", quantity: 10 },
@@ -171,3 +172,55 @@ updateQuantity(1, 10);
 //console.log(inventory);
 
 // function findProductByName(name)
+*/
+
+const inventory = [
+  { id: 1, name: "Laptop", quantity: 4 },
+  { id: 2, name: "Smartphone", quantity: 10 },
+  { id: 3, name: "Tablet", quantity: 6 },
+];
+
+// forEach
+
+// function updateQuantity(id, quantity) {
+//   inventory.forEach((item) => {
+//     if (id === item.id) {
+//       item.quantity = quantity;
+//     }
+//   });
+// }
+
+// updateQuantity(1, 10);
+
+// for Loop
+function updateQuantity(id, quantity) {
+  for (let i = 0; i < inventory.length; i++) {
+    if (inventory[i].id === id) {
+      inventory[i].quantity = quantity;
+    }
+  }
+}
+
+updateQuantity(2, 5);
+// console.log(inventory);
+
+//function findProductByName(name) {
+//   for (let i = 0; i < inventory.length; i++) {
+//     if (inventory[i].name === name) {
+//       console.log(inventory[i]);
+//     }
+//   }
+// }
+
+// findProductByName("Laptop");
+
+// Array.find
+
+function findProductByName(name) {
+  const product = inventory.find((item) => {
+    return item.name === name;
+  });
+  console.log(product);
+}
+
+findProductByName("Smartphone");
