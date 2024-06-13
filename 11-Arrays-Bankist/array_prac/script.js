@@ -246,13 +246,13 @@ function highestGrade() {
   console.log(Math.max(...grades));
 }
 
-highestGrade();
+//highestGrade();
 
 function lowestGrade() {
   console.log(Math.min(...grades));
 }
 
-lowestGrade();
+//lowestGrade();
 
 // let arr = [1, 5, 1000, 200];
 // const res = function sortArr(a, b) {
@@ -297,3 +297,69 @@ lowestGrade();
 // }
 
 // averagGrade();
+
+const movies = [
+  { title: "Inception", director: "Christopher Nolan", year: 2010 },
+  {
+    title: "The Matrix",
+    director: "Lana Wachowski, Lilly Wachowski",
+    year: 1999,
+  },
+  { title: "Interstellar", director: "Christopher Nolan", year: 2014 },
+];
+
+// push method
+// let res = [];
+
+// function findMoviesByDirector(director) {
+//   for (let i = 0; i < movies.length; i++) {
+//     if (movies[i].director === director) {
+//       res.push(movies[i]);
+//     }
+//   }
+//   return res;
+// }
+
+//console.log(findMoviesByDirector("Christopher Nolan"));
+//findMoviesByDirector("Christopher Nolan");
+
+// find Method
+
+// function findMoviesByDirector(director) {
+//   movies.find((movie) => {
+//     if (movie.director === director) {
+//       console.log(movie);
+//     }
+//   });
+// }
+
+// findMoviesByDirector("Christopher Nolan");
+
+// filter method
+function findMoviesByDirector(director) {
+  let list = movies.filter((movie) => {
+    if (movie.director === director) {
+      return movie;
+    }
+  });
+  console.log(list);
+}
+
+//findMoviesByDirector("Christopher Nolan");
+
+function listMovies() {
+  const sortedmovies = movies.sort((a, b) => {
+    // ascending order
+    if (a.year > b.year) {
+      return 1;
+    } else if (a.year < b.year) {
+      return -1;
+    }
+  });
+  // console.log(sortedmovies);
+  sortedmovies.forEach((sortedMovie) => {
+    console.log(`${sortedMovie.year} : ${sortedMovie.title}`);
+  });
+}
+
+//listMovies();
