@@ -174,6 +174,7 @@ updateQuantity(1, 10);
 // function findProductByName(name)
 */
 
+/*
 const inventory = [
   { id: 1, name: "Laptop", quantity: 4 },
   { id: 2, name: "Smartphone", quantity: 10 },
@@ -224,3 +225,75 @@ function findProductByName(name) {
 }
 
 findProductByName("Smartphone");
+*/
+
+const grades = [85, 92, 78, 88, 90];
+let avg;
+// let max = grades[0];
+
+// function highestGrade(a, b) {
+//   if (a < b) {
+//     return 1;
+//   } else if (a > b) {
+//     return -1;
+//   }
+// }
+
+// const max = grades.sort(highestGrade);
+// console.log(max[0]);
+
+function highestGrade() {
+  console.log(Math.max(...grades));
+}
+
+highestGrade();
+
+function lowestGrade() {
+  console.log(Math.min(...grades));
+}
+
+lowestGrade();
+
+// let arr = [1, 5, 1000, 200];
+// const res = function sortArr(a, b) {
+//   if (a < b) {
+//     return 1;
+//   } else if (a > b) {
+//     return -1;
+//   } else {
+//     return 0;
+//   }
+// };
+// const max = arr.sort(res);
+// console.log(max[0]);
+
+// function highestGrade() {
+//   for (let i = 0; i < grades.length; i++) {
+//     if (grades[i] > max) {
+//       return grades[i];
+//     }
+//   }
+// }
+
+// console.log(highestGrade());
+
+// function averageGrade() {
+//   const total = grades.reduce(function (accumulator, value) {
+//     return accumulator + value;
+//   }, 0);
+//   avg = total / grades.length;
+//   return avg;
+// }
+// console.log(averageGrade());
+
+// let sum = 0;
+// let average;
+
+// function averagGrade() {
+//   grades.map((num) => {
+//     average = (sum += num) / grades.length;
+//   });
+//   console.log(average);
+// }
+
+// averagGrade();
