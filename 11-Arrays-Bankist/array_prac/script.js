@@ -363,3 +363,32 @@ function listMovies() {
 }
 
 //listMovies();
+
+const temperatures = [72, 75, 79, 80, 78, 74, 73];
+
+// function daysAboveThreshold(threshold) {
+//   temperatures.forEach((temp) => {
+//     if (temp > threshold) {
+//       console.log(temp);
+//     }
+//   });
+// }
+
+function daysAboveThreshold(threshold) {
+  const days = temperatures.filter((temp) => {
+    if (temp > threshold) {
+      return temp;
+    }
+  });
+  console.log(days.length);
+}
+daysAboveThreshold(75);
+
+// function averageTemp() {
+//   const sum = temperatures.reduce((accumulator, temp) => {
+//     return (accumulator += temp);
+//   }, 0);
+
+//   console.log(sum / temperatures.length);
+// }
+// averageTemp();
