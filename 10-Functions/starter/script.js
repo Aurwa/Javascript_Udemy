@@ -1,19 +1,46 @@
 'use strict';
 
-const bookingArr = [];
-const createBooking = function flight(
-  flightNum,
-  numPassengers = 10,
-  price = 1000
-) {
-  const booking = {
-    flightNum,
-    numPassengers,
-    price,
-  };
+// const bookingArr = [];
+// const createBooking = function flight(
+//   flightNum,
+//   numPassengers = 10,
+//   price = 1000
+// ) {
+//   const booking = {
+//     flightNum,
+//     numPassengers,
+//     price,
+//   };
 
-  console.log(booking);
-  bookingArr.push(booking);
+//   console.log(booking);
+//   bookingArr.push(booking);
+// };
+
+// createBooking('LH123');
+
+const flight = 'LH234';
+const jonas = {
+  name: 'Jonas',
+  passport: 2345678,
 };
 
-createBooking('LH123');
+const checkIn = function (flightNum, passenger) {
+  flightNum = 'LH555';
+  passenger.name = 'Mr. ' + passenger.name;
+
+  if (passenger.passport === 2345678) {
+    alert('Checked In');
+  } else {
+    alert('Wrong passport');
+  }
+};
+
+const newPassport = function (person) {
+  person.passport = Math.floor(Math.random() * 10000000);
+};
+
+newPassport(jonas);
+checkIn(flight, jonas);
+
+// console.log(flight);
+// console.log(jonas);
