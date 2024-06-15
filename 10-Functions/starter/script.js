@@ -78,13 +78,113 @@
 //   };
 // };
 
-const greet = greeting => {
-  return function (name) {
-    console.log(`${greeting} ${name}`);
-  };
+// const greet = greeting => {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+// const returnFunc = greet('Hey');
+// returnFunc('Steven');
+
+// greet('Hello')('Jonas');
+
+// ========================================
+// const lufthansa = {
+//   airline: 'Lufthansa',
+//   iataCode: 'LH',
+//   bookings: [],
+//   book: function (flightNum, name) {
+//     console.log(
+//       `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`
+//     );
+//     this.bookings.push({
+//       flight: `${this.iataCode} ${flightNum}`,
+//       name,
+//     });
+//   },
+// };
+
+// lufthansa.book(239, 'Jon Smith');
+// lufthansa.book(111, 'Tom Holland');
+// //console.log(lufthansa);
+
+// const eurowings = {
+//   name: 'Eurowings',
+//   iataCode: 'EW',
+//   airline: 'Eurowings',
+//   bookings: [],
+// };
+
+// const book = lufthansa.book;
+// book.call(eurowings, 23, 'Sarah Williams');
+
+// function greet() {
+//   console.log(this.name);
+//   console.log(`Meet ${this.name}, your new ${this.age} years old friend!`);
+// }
+
+// const person = {
+//   name: 'Ali',
+//   age: 16,
+// };
+
+// greet.call(person);
+
+// function setUsername(username) {
+//   this.username = username;
+// }
+
+// function createUser(username, email, password) {
+//   setUsername.call(this, username);
+//this.username = username;
+//   this.email = email;
+//   this.password = password;
+// }
+
+// const user = new createUser('Ali', 'ali@google.com', '123');
+// const user = new createUser('Ali', 'ali@google.com', '123');
+// console.log(user);
+
+// const lufthansa = {
+//   airline: 'Lufthansa',
+//   iataCode: 'LH',
+//   bookingsArr: [],
+
+//   book: function (name, flightNum) {
+//     console.log(
+//       `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`
+//     );
+
+//     this.bookingsArr.push({
+//       flight: `${this.iataCode} ${flightNum}`,
+//       name,
+//     });
+//   },
+// };
+
+// lufthansa.book('John Sims', 199);
+// console.log(lufthansa.bookingsArr);
+
+// const bookFunc = lufthansa.book;
+// console.log(bookFunc);
+
+// const emirates = {
+//   airline: 'Emirates',
+//   iataCode: 'EM',
+//   bookingsArr: [],
+// };
+
+// bookFunc.call(emirates, 'Katy Perry', 999);
+
+const setUsername = function (username) {
+  this.username = username;
 };
 
-const returnFunc = greet('Hey');
-returnFunc('Steven');
+const createUser = function (username, email) {
+  setUsername.call(this, username);
+  this.email = email;
+};
 
-greet('Hello')('Jonas');
+const user = new createUser('Williams', 'williams@google.com');
+console.log(user);
