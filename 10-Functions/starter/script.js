@@ -360,24 +360,32 @@ const book = lufthansa.book;
 //   console.log('Never again');
 // })();
 
-let f;
+// let f;
 
-const g = function () {
-  let a = 23;
-  f = function () {
-    console.log(a * 2);
-  };
-};
+// const g = function () {
+//   let a = 23;
+//   f = function () {
+//     console.log(a * 2);
+//   };
+// };
 
-const h = function () {
-  let b = 50;
-  f = function () {
-    console.log(b * 2);
-  };
-};
+// const h = function () {
+//   let b = 50;
+//   f = function () {
+//     console.log(b * 2);
+//   };
+// };
 
-g();
-h();
-f();
+// g();
+// h();
+// f();
 
-console.dir(f);
+// console.dir(f);
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+  const body = document.querySelector('body');
+  body.addEventListener('click', () => {
+    header.style.color = 'blue';
+  });
+})();
