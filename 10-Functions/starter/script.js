@@ -1,5 +1,7 @@
 'use strict';
 
+/*
+
 // const bookingArr = [];
 // const createBooking = function flight(
 //   flightNum,
@@ -177,14 +179,74 @@
 
 // bookFunc.call(emirates, 'Katy Perry', 999);
 
-const setUsername = function (username) {
-  this.username = username;
+// const setUsername = function (username) {
+//   this.username = username;
+// };
+
+// const createUser = function (username, email) {
+//   setUsername.call(this, username);
+//   this.email = email;
+// };
+
+// const user = new createUser('Williams', 'williams@google.com');
+// console.log(user);
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book: function (flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`
+    );
+    this.bookings.push({
+      flight: `${this.iataCode} ${flightNum}`,
+      name,
+    });
+  },
 };
 
-const createUser = function (username, email) {
-  setUsername.call(this, username);
-  this.email = email;
+// lufthansa.book(239, 'Jon Smith');
+// lufthansa.book(111, 'Tom Holland');
+//console.log(lufthansa);
+
+const eurowings = {
+  name: 'Eurowings',
+  iataCode: 'EW',
+  airline: 'Eurowings',
+  bookings: [],
 };
 
-const user = new createUser('Williams', 'williams@google.com');
-console.log(user);
+const book = lufthansa.book;
+// book.call(eurowings, 23, 'Sarah Williams');
+
+// const bookEw = book.bind(eurowings);
+// bookEw(100, 'Aurwa');
+
+// lufthansa.planes = 300;
+// lufthansa.buyPlanes = function () {
+//   console.log(this);
+//   this.planes++;
+//   console.log(this.planes);
+// };
+
+// document
+//   .querySelector('.buy')
+//   .addEventListener('click', lufthansa.buyPlanes.bind(lufthansa));
+
+*/
+
+const bookingArr = [];
+
+const createBooking = function (flightNum, numPassengers = 3, price = 199) {
+  const booking = {
+    flightNum,
+    numPassengers,
+    price,
+  };
+
+  bookingArr.push(booking);
+  console.log(booking);
+};
+
+createBooking('LH123', undefined, 200);
