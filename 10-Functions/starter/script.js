@@ -236,17 +236,38 @@ const book = lufthansa.book;
 
 */
 
-const bookingArr = [];
+// const bookingArr = [];
 
-const createBooking = function (flightNum, numPassengers = 3, price = 199) {
-  const booking = {
-    flightNum,
-    numPassengers,
-    price,
-  };
+// const createBooking = function (flightNum, numPassengers = 3, price = 199) {
+//   const booking = {
+//     flightNum,
+//     numPassengers,
+//     price,
+//   };
 
-  bookingArr.push(booking);
-  console.log(booking);
+//   bookingArr.push(booking);
+//   console.log(booking);
+// };
+
+// createBooking('LH123', undefined, 200);
+
+const flight = 'LH123';
+const jonas = {
+  name: 'Jonas',
+  passport: 12345678,
 };
 
-createBooking('LH123', undefined, 200);
+const checkIn = function (flightNum, passenger) {
+  flightNum = 'LH456';
+  passenger.name = 'Mr. ' + passenger.name;
+
+  if (passenger.passport === 12345678) {
+    alert('Checked In');
+  } else {
+    alert('Passport Incorrect');
+  }
+};
+
+checkIn(flight, jonas);
+console.log(flight);
+console.log(jonas);
