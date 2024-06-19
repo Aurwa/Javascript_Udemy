@@ -288,11 +288,44 @@ const book = lufthansa.book;
 
 // transformer('Javascript is the best!', upperFirstWord);
 
-const greet = function (greeting) {
-  return function (name) {
-    console.log(`${greeting} ${name}`);
-  };
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+// const greetFunc = greet('Hello');
+// greetFunc('Jonas');
+
+// const setUsername = function (username) {
+//   this.username = username;
+// };
+
+// const setUser = function (username, email, password) {
+//   setUsername.call(this, username);
+//   this.email = email;
+//   this.password = password;
+// };
+
+// const user1 = new setUser('Jonas', 'jonas@google.com', '123');
+// console.log(user1);
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookingsArr: [],
+
+  book: function (name, flightNum) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`
+    );
+
+    this.bookingsArr.push({
+      flight: `${this.iataCode} ${flightNum}`,
+      name,
+    });
+  },
 };
 
-const greetFunc = greet('Hello');
-greetFunc('Jonas');
+lufthansa.book('John Sims', 199);
+console.log(lufthansa.bookingsArr);
