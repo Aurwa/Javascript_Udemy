@@ -350,12 +350,34 @@ const book = lufthansa.book;
 // const addVAT = addTax(0.23);
 // console.log(addVAT(100));
 
-const runOnce = function () {
-  console.log('Only once');
+// const runOnce = function () {
+//   console.log('Only once');
+// };
+
+// runOnce();
+
+// (function () {
+//   console.log('Never again');
+// })();
+
+let f;
+
+const g = function () {
+  let a = 23;
+  f = function () {
+    console.log(a * 2);
+  };
 };
 
-runOnce();
+const h = function () {
+  let b = 50;
+  f = function () {
+    console.log(b * 2);
+  };
+};
 
-(function () {
-  console.log('Never again');
-})();
+g();
+h();
+f();
+
+console.dir(f);
