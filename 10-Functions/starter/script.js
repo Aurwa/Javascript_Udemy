@@ -310,22 +310,42 @@ const book = lufthansa.book;
 // const user1 = new setUser('Jonas', 'jonas@google.com', '123');
 // console.log(user1);
 
-const lufthansa = {
-  airline: 'Lufthansa',
-  iataCode: 'LH',
-  bookingsArr: [],
+// const lufthansa = {
+//   airline: 'Lufthansa',
+//   iataCode: 'LH',
+//   bookingsArr: [],
 
-  book: function (name, flightNum) {
-    console.log(
-      `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`
-    );
+//   book: function (name, flightNum) {
+//     console.log(
+//       `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`
+//     );
 
-    this.bookingsArr.push({
-      flight: `${this.iataCode} ${flightNum}`,
-      name,
-    });
-  },
+//     this.bookingsArr.push({
+//       flight: `${this.iataCode} ${flightNum}`,
+//       name,
+//     });
+//   },
+// };
+
+// lufthansa.book('John Sims', 199);
+// console.log(lufthansa.bookingsArr);
+
+//=========================================
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+// const greetFunc = greet('Hello');
+// greetFunc('Jonas');
+
+const addTax = function (rate) {
+  // console.log(rate);
+  return function (value) {
+    return value + value * rate;
+  };
 };
 
-lufthansa.book('John Sims', 199);
-console.log(lufthansa.bookingsArr);
+const addVAT = addTax(0.23);
+console.log(addVAT(100));
