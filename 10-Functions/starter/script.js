@@ -340,12 +340,22 @@ const book = lufthansa.book;
 // const greetFunc = greet('Hello');
 // greetFunc('Jonas');
 
-const addTax = function (rate) {
-  // console.log(rate);
-  return function (value) {
-    return value + value * rate;
-  };
+// const addTax = function (rate) {
+//   // console.log(rate);
+//   return function (value) {
+//     return value + value * rate;
+//   };
+// };
+
+// const addVAT = addTax(0.23);
+// console.log(addVAT(100));
+
+const runOnce = function () {
+  console.log('Only once');
 };
 
-const addVAT = addTax(0.23);
-console.log(addVAT(100));
+runOnce();
+
+(function () {
+  console.log('Never again');
+})();
