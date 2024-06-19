@@ -251,23 +251,48 @@ const book = lufthansa.book;
 
 // createBooking('LH123', undefined, 200);
 
-const flight = 'LH123';
-const jonas = {
-  name: 'Jonas',
-  passport: 12345678,
+// const flight = 'LH123';
+// const jonas = {
+//   name: 'Jonas',
+//   passport: 12345678,
+// };
+
+// const checkIn = function (flightNum, passenger) {
+//   flightNum = 'LH456';
+//   passenger.name = 'Mr. ' + passenger.name;
+
+//   if (passenger.passport === 12345678) {
+//     alert('Checked In');
+//   } else {
+//     alert('Passport Incorrect');
+//   }
+// };
+
+// checkIn(flight, jonas);
+// console.log(flight);
+// console.log(jonas);
+
+// const oneWord = function (str) {
+//   return str.replace(/ /g, '').toLowerCase();
+// };
+
+// const upperFirstWord = function (str) {
+//   const [first, ...others] = str.split(' ');
+//   return [first.toUpperCase(), ...others].join(' ');
+// };
+
+// const transformer = function (str, fn) {
+//   console.log(`Transformed string: ${fn(str)}`);
+//   console.log(fn.name);
+// };
+
+// transformer('Javascript is the best!', upperFirstWord);
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
 };
 
-const checkIn = function (flightNum, passenger) {
-  flightNum = 'LH456';
-  passenger.name = 'Mr. ' + passenger.name;
-
-  if (passenger.passport === 12345678) {
-    alert('Checked In');
-  } else {
-    alert('Passport Incorrect');
-  }
-};
-
-checkIn(flight, jonas);
-console.log(flight);
-console.log(jonas);
+const greetFunc = greet('Hello');
+greetFunc('Jonas');
