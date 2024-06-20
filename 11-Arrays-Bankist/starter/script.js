@@ -74,3 +74,18 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
+
+const arr = [1, 2, 3, 4, 5];
+// console.log(arr.slice(1));
+
+// creating a shallow copy
+// console.log(arr.slice());
+// console.log([...arr]);
+// console.log(arr.splice(1, 3));
+// console.log(arr.splice(-1));
+
+const arr2 = [6, 7, 8];
+const res = arr.concat(arr2);
+console.log(res);
+console.log(res.join(' '));
+console.log(arr2.includes(8));
