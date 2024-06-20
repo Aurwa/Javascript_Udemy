@@ -71,7 +71,7 @@ const currencies = new Map([
   ['GBP', 'Pound sterling'],
 ]);
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
 
@@ -84,12 +84,41 @@ const arr = [1, 2, 3, 4, 5];
 // console.log(arr.splice(1, 3));
 // console.log(arr.splice(-1));
 
-const arr2 = [6, 7, 8];
-const res = arr.concat(arr2);
-console.log(res);
-console.log(res.join(' '));
-console.log(arr2.includes(8));
-console.log(arr.at(-1));
+// const arr2 = [6, 7, 8];
+// for (const num of arr2) {
+//   console.log(num);
+// }
+
+// const res = arr.forEach(e => {
+//   console.log(e + 1);
+//   return e + 1;
+// });
+
+// console.log(res);
+
+// const res = arr.concat(arr2);
+// console.log(res);
+// console.log(res.join(' '));
+// console.log(arr2.includes(8));
+// console.log(arr.at(-1));
 // console.log(arr.at(0));
-console.log('jonas'.at(0));
-console.log('jonas'.at(-1));
+// console.log('jonas'.at(0));
+// console.log('jonas'.at(-1));
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+// for (const [i, movement] of movements.entries()) {
+//   if (movement > 0) {
+//     console.log(`${i} : Deposited money`);
+//   } else {
+//     console.log(`${i} : Withdrew money`);
+//   }
+// }
+
+movements.forEach((movement, i) => {
+  if (movement > 0) {
+    console.log(`${i} : Deposited money`);
+  } else {
+    console.log(`${i} : Withdrew money`);
+  }
+});
