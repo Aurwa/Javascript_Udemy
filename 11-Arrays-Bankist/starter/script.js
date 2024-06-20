@@ -95,17 +95,7 @@ function createUser(accs) {
 }
 
 createUser(accounts);
-console.log(accounts);
-
-// console.log(username);
-
-// const name = username.map(word => {
-//   return word[0];
-// });
-
-// console.log(name.join(''));
-
-// const name = username[0][0].concat(username[1][0]).concat(username[2][0]);
+// console.log(accounts);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -187,3 +177,15 @@ const movementDescp = movements.map((mov, i, arr) => {
 });
 
 // console.log(movementDescp);
+
+const deposits = movements.filter(mov => {
+  return mov > 0;
+});
+
+console.log(deposits);
+
+const withdrawals = movements.filter(mov => {
+  return mov < 0;
+});
+
+console.log(withdrawals);
