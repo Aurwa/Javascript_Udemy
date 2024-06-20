@@ -89,3 +89,7 @@ const res = arr.concat(arr2);
 console.log(res);
 console.log(res.join(' '));
 console.log(arr2.includes(8));
+console.log(arr.at(-1));
+// console.log(arr.at(0));
+console.log('jonas'.at(0));
+console.log('jonas'.at(-1));
