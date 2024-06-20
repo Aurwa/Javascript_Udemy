@@ -382,7 +382,7 @@ function daysAboveThreshold(threshold) {
   });
   console.log(days.length);
 }
-daysAboveThreshold(75);
+//daysAboveThreshold(75);
 
 // function averageTemp() {
 //   const sum = temperatures.reduce((accumulator, temp) => {
@@ -392,3 +392,34 @@ daysAboveThreshold(75);
 //   console.log(sum / temperatures.length);
 // }
 // averageTemp();
+
+// Data 1: Julia's data [3, 5, 2, 12, 7], Kate's data [4, 1, 15, 8, 3]
+
+const juliaData = [3, 5, 2, 12, 7];
+const kateData = [4, 1, 15, 8, 3];
+
+const juliaDataCopy = juliaData.slice();
+const kateDataCopy = kateData.slice();
+
+juliaDataCopy.splice(-2);
+juliaDataCopy.splice(0, 1);
+console.log(juliaDataCopy);
+
+kateDataCopy.splice(-2);
+kateDataCopy.splice(0, 1);
+console.log(kateDataCopy);
+
+function displayage(array) {
+  array.forEach((age, index) => {
+    if (age >= 3) {
+      console.log(
+        `Dog number ${index + 1} is an adult, and is ${age} years old`
+      );
+    } else {
+      console.log(`Dog no ${index + 1} is still a puppy🐶`);
+    }
+  });
+}
+
+// displayage(juliaDataCopy);
+displayage(kateDataCopy);
