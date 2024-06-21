@@ -81,6 +81,7 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+//=======================================
 // ======= function =======
 function createUser(accs) {
   // console.log(accs);
@@ -98,8 +99,8 @@ function createUser(accs) {
 createUser(accounts);
 // console.log(accounts);
 
+//====================================
 // ======= function ========
-
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const calcPrintBalance = function (movements) {
@@ -110,6 +111,11 @@ const calcPrintBalance = function (movements) {
 };
 
 calcPrintBalance(account1.movements);
+
+//======================================
+// ========= function ==========
+
+// const calcDisplaySumm
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -268,4 +274,17 @@ const max = movements.reduce((acc, mov) => {
   }
 }, movements[0]);
 
-console.log(max);
+// console.log(max);
+
+const euroToUsd = 1.1;
+const res = movements
+  .filter(mov => {
+    return mov > 0;
+  })
+  .map(mov => {
+    return Math.floor(mov * euroToUsd);
+  })
+  .reduce((acc, mov) => {
+    return acc + mov;
+  }, 0);
+console.log(res);
