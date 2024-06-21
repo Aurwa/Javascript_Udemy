@@ -182,10 +182,54 @@ const deposits = movements.filter(mov => {
   return mov > 0;
 });
 
-console.log(deposits);
+// console.log(deposits);
 
 const withdrawals = movements.filter(mov => {
   return mov < 0;
 });
 
-console.log(withdrawals);
+// console.log(withdrawals);
+
+// function createUsername(user) {
+//   const username1 = user
+//     .toLocaleLowerCase()
+//     .split(' ')
+//     .map(function (letter) {
+//       return letter[0];
+//     })
+//     .join('');
+
+//   return username1;
+// }
+
+// console.log(createUsername('Steven Thomas Williams'));
+function createUsername(user) {
+  // console.log(user);
+  user.forEach(function (accountsUser) {
+    accountsUser.username1 = accountsUser.owner
+      .toLowerCase()
+      .split(' ')
+      .map(function (letter) {
+        return letter[0];
+      })
+      .join('');
+  });
+}
+
+createUsername(accounts);
+console.log(accounts);
+
+// function createUser(accs) {
+//   // console.log(accs);
+//   accs.forEach(acc => {
+//     acc.username = acc.owner
+//       .toLowerCase()
+//       .split(' ')
+//       .map(word => {
+//         return word[0];
+//       })
+//       .join('');
+//   });
+// }
+
+// console.log(accounts);
