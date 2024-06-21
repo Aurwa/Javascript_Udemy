@@ -81,6 +81,7 @@ const displayMovements = function (movements) {
 
 displayMovements(account1.movements);
 
+// ======= function =======
 function createUser(accs) {
   // console.log(accs);
   accs.forEach(acc => {
@@ -96,6 +97,19 @@ function createUser(accs) {
 
 createUser(accounts);
 // console.log(accounts);
+
+// ======= function ========
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const calcPrintBalance = function (movements) {
+  const balance = movements.reduce(function (acc, curr) {
+    return acc + curr;
+  }, 0);
+  labelBalance.textContent = `${balance}€`;
+};
+
+calcPrintBalance(account1.movements);
 
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
@@ -158,7 +172,7 @@ const arr = [1, 2, 3, 4, 5];
 //     console.log(`${i} : Withdrew money`);
 //   }
 // });
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 const eurToUsd = 1.1;
 
@@ -217,7 +231,7 @@ function createUsername(user) {
 }
 
 createUsername(accounts);
-console.log(accounts);
+// console.log(accounts);
 
 // function createUser(accs) {
 //   // console.log(accs);
@@ -233,3 +247,25 @@ console.log(accounts);
 // }
 
 // console.log(accounts);
+// console.log(movements);
+const balance = movements.reduce((acc, cur) => {
+  return acc + cur;
+}, 0);
+// console.log(balance);
+// console.log('=========================');
+
+let sum = 0;
+for (const mov of movements) {
+  sum += mov;
+}
+// console.log(sum);
+// console.log(movements);
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) {
+    return acc;
+  } else {
+    return mov;
+  }
+}, movements[0]);
+
+console.log(max);
