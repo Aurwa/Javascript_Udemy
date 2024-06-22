@@ -307,7 +307,7 @@ function anyDeposits(acc) {
   return acc > 5000;
 }
 
-console.log(movements.some(anyDeposits));
+// console.log(movements.some(anyDeposits));
 
 // console.log(account4.movements.every(mov => mov > 0));
 
@@ -330,4 +330,8 @@ const sortFunc = function (a, b) {
   }
 };
 
-console.log(numbers.sort(sortFunc));
+// console.log(numbers.sort(sortFunc));
+
+let newArr = new Array(7);
+newArr.fill(1);
+console.log(newArr);
