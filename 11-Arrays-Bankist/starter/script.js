@@ -287,4 +287,11 @@ const res = movements
   .reduce((acc, mov) => {
     return acc + mov;
   }, 0);
-console.log(res);
+// console.log(res);
+
+const firstWithdrawal = movements.find(mov => mov < 0);
+// console.log(movements);
+// console.log(firstWithdrawal);
+
+const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+console.log(account);
