@@ -334,4 +334,15 @@ const sortFunc = function (a, b) {
 
 let newArr = new Array(7);
 newArr.fill(1);
-console.log(newArr);
+// console.log(newArr);
+
+const y = Array.from({ length: 5 }, (curr, i) => {
+  return i + 1;
+});
+// console.log(y);
+
+const diceRolls = Array.from({ length: 15 }, (_, i) => {
+  return Math.floor(Math.random() * 6 + 1);
+});
+
+console.log(diceRolls);
