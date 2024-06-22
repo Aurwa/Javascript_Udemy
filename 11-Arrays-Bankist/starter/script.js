@@ -293,5 +293,20 @@ const firstWithdrawal = movements.find(mov => mov < 0);
 // console.log(movements);
 // console.log(firstWithdrawal);
 
-const account = accounts.find(acc => acc.owner === 'Jessica Davis');
-console.log(account);
+// const account = accounts.find(acc => acc.owner === 'Jessica Davis');
+// console.log(account);
+
+const accIndex = accounts.findIndex(acc => acc.owner === 'Jessica Davis');
+// console.log(accounts);
+// console.log(accIndex);
+
+// const anyDeposits = movements.some(acc => acc > 0);
+// console.log(anyDeposits);
+
+function anyDeposits(acc) {
+  return acc > 5000;
+}
+
+console.log(movements.some(anyDeposits));
+
+// console.log(account4.movements.every(mov => mov > 0));
