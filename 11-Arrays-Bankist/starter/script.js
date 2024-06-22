@@ -310,3 +310,24 @@ function anyDeposits(acc) {
 console.log(movements.some(anyDeposits));
 
 // console.log(account4.movements.every(mov => mov > 0));
+
+const arra = [[1, 2, 3], 5, 6, [7, 8, 9]];
+const flatArray = [].concat(...arra);
+// console.log(flatArray);
+// console.log(arra.flat(Infinity));
+
+const words = ['apple', 'strawberry', 'grapes', 'oranges'];
+// console.log(words.sort());
+
+const numbers = [300, 5, 1, 2000];
+const sortFunc = function (a, b) {
+  if (a > b) {
+    //positive value if the first argument is greater than the second (to sort a after b)
+    return 1;
+  } else if (a < b) {
+    // negative value if the first argument is less than the second (to sort a before b)
+    return -1;
+  }
+};
+
+console.log(numbers.sort(sortFunc));
