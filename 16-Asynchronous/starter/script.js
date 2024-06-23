@@ -177,14 +177,26 @@ promiseOne.then(() => {
 // async await
 // ======================================
 
-async function getUsers() {
-  try {
-    const response = await fetch('https://randomuser.me/api/');
-    const data = await response.json();
-    console.log(data);
-  } catch (error) {
-    console.log(error);
-  }
-}
+// async function getUsers() {
+//   try {
+//     const response = await fetch('https://randomuser.me/api/');
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (error) {
+//     console.log(error);
+//   }
+// }
 
-getUsers();
+// getUsers();
+
+console.log('Test start');
+
+setTimeout(() => {
+  console.log('0 sec setTimeout');
+}, 0);
+
+Promise.resolve('This is a promise').then(function (response) {
+  console.log(response);
+});
+
+console.log('Test end');
