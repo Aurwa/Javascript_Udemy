@@ -189,14 +189,52 @@ promiseOne.then(() => {
 
 // getUsers();
 
-console.log('Test start');
+// console.log('Test start');
 
-setTimeout(() => {
-  console.log('0 sec setTimeout');
-}, 0);
+// setTimeout(() => {
+//   console.log('0 sec setTimeout');
+// }, 0);
 
-Promise.resolve('This is a promise').then(function (response) {
-  console.log(response);
-});
+// Promise.resolve('This is a promise').then(function (response) {
+//   console.log(response);
+// });
 
-console.log('Test end');
+// console.log('Test end');
+
+// let randNum = Math.random();
+
+// const lotteryPromise = new Promise(function (resolve, reject) {
+//   console.log('Lottery draw is happening!');
+//   setTimeout(() => {
+//     if (randNum >= 0.5) {
+//       console.log(randNum);
+//       resolve('Won lottery');
+//     } else {
+//       console.log(randNum);
+//       reject(new Error('Lost lottery'));
+//     }
+//   }, 2000);
+// });
+
+// lotteryPromise
+//   .then(function (response) {
+//     console.log(response);
+//   })
+//   .catch(function (error) {
+//     console.error(error);
+//   });
+
+const wait = function (seconds) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, seconds * 1000);
+  });
+};
+
+wait(2)
+  .then(() => {
+    console.log('I waited for 2 seconds');
+    return wait(1);
+  })
+  .then(() => {
+    console.log('I waited for 1 second');
+  });
