@@ -8,7 +8,7 @@ const countriesContainer = document.querySelector('.countries');
 function getCountryData(country) {
   const request = fetch(
     // 'https://restcountries.com/v3.1/all?fields=name,population'
-    `https://restcountries.com/v3.1/name/${country}`
+    `https://restcountries.com/v2.1/name/${country}`
   )
     .then(response => {
       console.log(response);
@@ -16,6 +16,9 @@ function getCountryData(country) {
     })
     .then(function (data) {
       console.log(data);
+    })
+    .catch(err => {
+      console.log(`${err}`);
     });
 }
 
