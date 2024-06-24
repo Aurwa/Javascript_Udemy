@@ -4,7 +4,7 @@ const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
 
 ///////////////////////////////////////
-
+/*
 function getCountryData(country) {
   const request = fetch(
     // 'https://restcountries.com/v3.1/all?fields=name,population'
@@ -262,6 +262,8 @@ promiseOne.then(() => {
 //   alert(err);
 // }
 
+*/
+
 // yt example promise
 
 /*
@@ -298,6 +300,7 @@ order(1000, () => console.log(`${stocks.fruits[0]} was selected`))
 
 // yt example async / await
 
+/*
 let stocks = {
   fruits: ['strawberry', 'grapes', 'banana', 'apple'],
   liquid: ['water', 'ice'],
@@ -328,3 +331,46 @@ async function kitchen() {
 kitchen();
 console.log('Other tasks');
 console.log('Other orders');
+*/
+
+//https://restcountries.com/v2.1/name/${country}
+
+fetch(`https://randomuser.me/api/`)
+  .then(response => {
+    return response.json();
+  })
+  .then(data => {
+    console.log(data);
+  });
+
+// const getCountry = function () {
+//   fetch(`https://restcountries.com/v3.1/name/${name}`)
+//     .then(response => {
+//       return response.json();
+//     })
+//     .then(data => {
+//       console.log(data);
+//     });
+// };
+
+// getCountry('canada');
+
+function getCountryData(country) {
+  const request = fetch(
+    // 'https://restcountries.com/v3.1/all?fields=name,population'
+    `https://restcountries.com/v2.1/name/${country}`
+  )
+    .then(response => {
+      console.log(response);
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+    })
+
+    .catch(err => {
+      console.log(`${err}`);
+    });
+}
+
+getCountryData('canada');
