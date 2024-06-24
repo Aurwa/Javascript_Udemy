@@ -333,44 +333,54 @@ console.log('Other tasks');
 console.log('Other orders');
 */
 
-//https://restcountries.com/v2.1/name/${country}
+let stocks = {
+  fruits: ['strawberry', 'grapes', 'banana', 'apple'],
+  liquid: ['water', 'ice'],
+  holder: ['cone', 'cup', 'stick'],
+  toppings: ['chocolate', 'peanuts'],
+};
 
-fetch(`https://randomuser.me/api/`)
+let is_shop_open = true;
+
+const select_toppings = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve('Which toppings do you want?');
+  }, 2000);
+});
+
+select_toppings.then(res => {
+  console.log(res);
+});
+
+// async function kitchen() {
+//   console.log('A');
+//   console.log('B');
+//   await select_toppings();
+//   console.log('C');
+//   console.log('D');
+// }
+
+// kitchen();
+
+/*
+const lotteryPromise = new Promise((resolve, reject) => {
+  const randNum = Math.random();
+  console.log('Buy lottery ticket');
+  setTimeout(() => {
+    if (randNum >= 0.5) {
+      resolve('You won the lottery.');
+    } else {
+      reject('You lost the lottery.');
+    }
+  }, 2000);
+});
+
+lotteryPromise
   .then(response => {
-    return response.json();
+    console.log(response);
   })
-  .then(data => {
-    console.log(data);
+
+  .catch(err => {
+    console.log(err);
   });
-
-// const getCountry = function () {
-//   fetch(`https://restcountries.com/v3.1/name/${name}`)
-//     .then(response => {
-//       return response.json();
-//     })
-//     .then(data => {
-//       console.log(data);
-//     });
-// };
-
-// getCountry('canada');
-
-function getCountryData(country) {
-  const request = fetch(
-    // 'https://restcountries.com/v3.1/all?fields=name,population'
-    `https://restcountries.com/v2.1/name/${country}`
-  )
-    .then(response => {
-      console.log(response);
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-    })
-
-    .catch(err => {
-      console.log(`${err}`);
-    });
-}
-
-getCountryData('canada');
+*/
