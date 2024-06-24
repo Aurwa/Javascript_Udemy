@@ -224,17 +224,32 @@ promiseOne.then(() => {
 //     console.error(error);
 //   });
 
-const wait = function (seconds) {
+// const wait = function (seconds) {
+//   return new Promise(function (resolve) {
+//     setTimeout(resolve, seconds * 1000);
+//   });
+// };
+
+// wait(2)
+//   .then(() => {
+//     console.log('I waited for 2 seconds');
+//     return wait(1);
+//   })
+//   .then(() => {
+//     console.log('I waited for 1 second');
+//   });
+
+const timer = function (seconds) {
   return new Promise(function (resolve) {
     setTimeout(resolve, seconds * 1000);
   });
 };
 
-wait(2)
+timer(1)
   .then(() => {
-    console.log('I waited for 2 seconds');
-    return wait(1);
+    console.log('After 1 sec');
+    return timer(2);
   })
   .then(() => {
-    console.log('I waited for 1 second');
+    console.log('After 2 sec');
   });
