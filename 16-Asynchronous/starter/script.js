@@ -556,3 +556,174 @@ lotteryPromise
 //   .then(res => {
 //     console.log(res);
 //   });
+
+//************************************************************************************** */
+
+// function task1() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       console.log('First task data.');
+//       resolve('First task done');
+//     }, 1000);
+//   });
+// }
+
+// function task2(resFromOne) {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       console.log('Second task, ', resFromOne);
+//       resolve('Second task done');
+//     }, 2000);
+//   });
+// }
+
+// task1()
+//   .then(res => {
+//     return task2(res);
+//   })
+//   .then(res => {
+//     console.log(res);
+//   });
+
+// **************************************************************************************//
+
+// async function task1() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       console.log('First task data.');
+//       resolve('First task done');
+//     }, 1000);
+//   });
+// }
+
+// async function task2(resFromOne) {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       console.log('Second task, ', resFromOne);
+//       resolve('Second task done');
+//     }, 2000);
+//   });
+// }
+
+// async function tasks() {
+//   const firstTask = await task1();
+//   const secondTask = await task2(firstTask);
+//   console.log(secondTask);
+// }
+
+// tasks();
+
+// async function fetchData() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve('Data received');
+//     }, 2000);
+//   });
+// }
+
+// async function printData() {
+//   const res = await fetchData();
+//   console.log(res);
+// }
+
+// printData();
+
+// function fetchData() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve('Data received!!!');
+//     }, 2000);
+//   });
+// }
+
+// fetchData().then(res => {
+//   console.log(res);
+// });
+
+// console.log('Program started');
+
+// console.log('Program in progress...');
+
+// const newPromise = new Promise(resolve => {
+//   setTimeout(() => {
+//     resolve('Program complete');
+//   }, 3000);
+// });
+
+// newPromise.then(res => {
+//   console.log(res);
+// });
+
+// Question 1
+/*
+fetch('https://randomuser.me/api/')
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    } else {
+      return response.json();
+    }
+  })
+  .then(data => {
+    console.log(data.results[0].name.first);
+  })
+  .catch(err => {
+    console.log(err);
+  });
+*/
+
+// Question 2
+
+//https://jsonplaceholder.typicode.com/users/{userId}
+
+//https://jsonplaceholder.typicode.com/posts?userId={userId}
+
+// userData
+
+async function getUserDetails(userId) {
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/users/${userId}`
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch user details');
+  } else {
+    const userDetails = await response.json();
+    return userDetails;
+  }
+}
+
+async function getUserPosts(userId) {
+  const response = await fetch(
+    `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
+  );
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch user details');
+  } else {
+    const userPosts = await response.json();
+    return userPosts;
+  }
+}
+
+async function getUserData(userId) {
+  try {
+    const userDetails = await getUserDetails(userId);
+    console.log(userDetails);
+
+    const userPosts = await getUserPosts(userId);
+    console.log(userPosts);
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}
+
+let userId = 2;
+getUserData(userId);
+
+// .then(response => {
+//   return response.json();
+// })
+// .then(data => {
+//   console.log(data);
+// });
