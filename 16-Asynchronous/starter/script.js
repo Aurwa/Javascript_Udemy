@@ -404,26 +404,154 @@ lotteryPromise
 //     console.log(err);
 //   });
 
-function task1() {
+// function task1() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve('Task 1 completed');
+//     }, 1000);
+//   });
+// }
+
+// function task2(resultFromTask1) {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve('Task 2 completed');
+//     }, 2000);
+//   });
+// }
+
+// task1()
+//   .then(res => {
+//     console.log(res);
+//     return task2(res);
+//   })
+//   .then(res => {
+//     console.log(res);
+//   });
+
+// function rejectPromises() {
+//   return new Promise(function (resolve, reject) {
+//     let playgame = false;
+//     if (playgame) {
+//       resolve('User playing game');
+//     } else {
+//       reject('No one is playing game');
+//     }
+//   });
+// }
+
+// rejectPromises()
+//   .then(res => {
+//     console.log(res);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
+
+// function fetchData() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve('Data received');
+//     }, 2000);
+//   });
+// }
+
+// fetchData().then(result => {
+//   console.log(result);
+// });
+
+// Way 1
+// async function fetchData() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve('Data received.');
+//     }, 2000);
+//   });
+// }
+
+// async function displayData() {
+//   const res = await fetchData();
+//   console.log(res);
+// }
+
+// displayData();
+
+// Way 2
+// async function fetchData() {
+//   const res = await new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve('Data received.');
+//     }, 2000);
+//   });
+//   console.log(res);
+// }
+
+// fetchData();
+
+// async function fetchData() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve('Data received!!');
+//     }, 1000);
+//   });
+// }
+
+// async function displayData() {
+//   const res = await fetchData();
+//   console.log(res);
+// }
+
+// displayData();
+
+//////////////////////////////////////
+
+// async function firstTask() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       console.log('First task done');
+//       resolve('First task result');
+//     }, 1000);
+//   });
+// }
+
+// async function secondTask(resultFromFirstTask) {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       console.log('Second task done, received:', resultFromFirstTask);
+//       resolve('Second task result');
+//     }, 1000);
+//   });
+// }
+
+// async function runTasks() {
+//   const firstResult = await firstTask();
+//   const secondResult = await secondTask(firstResult);
+//   console.log(secondResult);
+// }
+
+//runTasks();
+
+function firstTask() {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve('Task 1 completed');
+      console.log('First task done');
+      resolve('First task result');
     }, 1000);
   });
 }
 
-function task2(resultFromTask1) {
+function secondTask(receivedFromFirst) {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve('Task 2 completed');
-    }, 2000);
+      console.log('Second task done. Received ', receivedFromFirst);
+      resolve('Second task result');
+    }, 1000);
   });
 }
 
-task1()
+firstTask()
   .then(res => {
-    console.log(res);
-    return task2(res);
+    return secondTask(res);
   })
   .then(res => {
     console.log(res);
