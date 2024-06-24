@@ -239,17 +239,92 @@ promiseOne.then(() => {
 //     console.log('I waited for 1 second');
 //   });
 
-const timer = function (seconds) {
-  return new Promise(function (resolve) {
-    setTimeout(resolve, seconds * 1000);
+// const timer = function (seconds) {
+//   return new Promise(function (resolve) {
+//     setTimeout(resolve, seconds * 1000);
+//   });
+// };
+
+// timer(1)
+//   .then(() => {
+//     console.log('After 1 sec');
+//     return timer(2);
+//   })
+//   .then(() => {
+//     console.log('After 2 sec');
+//   });
+
+// try {
+//   let x = 1;
+//   const y = 2;
+//   y = 3;
+// } catch (err) {
+//   alert(err);
+// }
+
+// yt example promise
+
+/*
+let stocks = {
+  fruits: ['strawberry', 'grapes', 'banana', 'apple'],
+  liquid: ['water', 'ice'],
+  holder: ['cone', 'cup', 'stick'],
+  toppings: ['chocolate', 'peanuts'],
+};
+
+let is_shop_open = true;
+
+let order = function (time, work) {
+  return new Promise(function (resolve, reject) {
+    if (is_shop_open) {
+      setTimeout(() => {
+        resolve(work());
+      }, time);
+    } else {
+      reject(console.log('Our shop is closed.'));
+    }
   });
 };
 
-timer(1)
+order(1000, () => console.log(`${stocks.fruits[0]} was selected`))
   .then(() => {
-    console.log('After 1 sec');
-    return timer(2);
+    return order(0, () => console.log('Production has started.'));
   })
+
   .then(() => {
-    console.log('After 2 sec');
+    return order(2000, () => console.log('The fruit was chopped'));
   });
+*/
+
+// yt example async / await
+
+let stocks = {
+  fruits: ['strawberry', 'grapes', 'banana', 'apple'],
+  liquid: ['water', 'ice'],
+  holder: ['cone', 'cup', 'stick'],
+  toppings: ['chocolate', 'peanuts'],
+};
+
+let is_shop_open = true;
+
+let toppings_choice = () => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve(console.log('Which toppings would like?'));
+    }, 3000);
+  });
+};
+
+async function kitchen() {
+  console.log('A');
+  console.log('B');
+
+  await toppings_choice();
+
+  console.log('C');
+  console.log('D');
+}
+
+kitchen();
+console.log('Other tasks');
+console.log('Other orders');
