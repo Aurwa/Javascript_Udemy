@@ -531,28 +531,28 @@ lotteryPromise
 
 //runTasks();
 
-function firstTask() {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      console.log('First task done');
-      resolve('First task result');
-    }, 1000);
-  });
-}
+// function firstTask() {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       console.log('First task done');
+//       resolve('First task result');
+//     }, 1000);
+//   });
+// }
 
-function secondTask(receivedFromFirst) {
-  return new Promise(resolve => {
-    setTimeout(() => {
-      console.log('Second task done. Received ', receivedFromFirst);
-      resolve('Second task result');
-    }, 1000);
-  });
-}
+// function secondTask(receivedFromFirst) {
+//   return new Promise(resolve => {
+//     setTimeout(() => {
+//       console.log('Second task done. Received ', receivedFromFirst);
+//       resolve('Second task result');
+//     }, 1000);
+//   });
+// }
 
-firstTask()
-  .then(res => {
-    return secondTask(res);
-  })
-  .then(res => {
-    console.log(res);
-  });
+// firstTask()
+//   .then(res => {
+//     return secondTask(res);
+//   })
+//   .then(res => {
+//     console.log(res);
+//   });
