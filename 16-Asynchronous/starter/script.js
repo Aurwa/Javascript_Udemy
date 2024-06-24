@@ -333,6 +333,8 @@ console.log('Other tasks');
 console.log('Other orders');
 */
 
+/*
+
 let stocks = {
   fruits: ['strawberry', 'grapes', 'banana', 'apple'],
   liquid: ['water', 'ice'],
@@ -384,3 +386,45 @@ lotteryPromise
     console.log(err);
   });
 */
+
+// function fetchData() {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       resolve('Data received');
+//       reject('Data not received');
+//     }, 2000);
+//   });
+// }
+
+// fetchData()
+//   .then(response => {
+//     console.log(response);
+//   })
+//   .catch(err => {
+//     console.log(err);
+//   });
+
+function task1() {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('Task 1 completed');
+    }, 1000);
+  });
+}
+
+function task2(resultFromTask1) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve('Task 2 completed');
+    }, 2000);
+  });
+}
+
+task1()
+  .then(res => {
+    console.log(res);
+    return task2(res);
+  })
+  .then(res => {
+    console.log(res);
+  });
