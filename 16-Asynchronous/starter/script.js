@@ -729,3 +729,67 @@ getUserData(userId);
 //   console.log(data);
 // });
 */
+
+// const randomPromise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     if (Math.random() >= 0.5) {
+//       resolve('Hello World!');
+//     } else {
+//       reject('Error Occured.');
+//     }
+//   }, 1000);
+// });
+
+// randomPromise
+//   .then(response => {
+//     console.log(response);
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });
+
+function inputNum(num) {
+  return new Promise(resolve => {
+    resolve(num);
+  });
+}
+
+function doubleNum(num) {
+  return new Promise(resolve => {
+    resolve(num + num);
+  });
+}
+
+function increaseByTen(num) {
+  return new Promise(resolve => {
+    resolve(num + 10);
+  });
+}
+
+function multiplyByThree(num) {
+  return new Promise(resolve => {
+    resolve(num * 3);
+  });
+}
+
+// inputNum(3)
+//   .then(res => {
+//     return doubleNum(res);
+//   })
+//   .then(res => {
+//     return increaseByTen(res);
+//   })
+//   .then(res => {
+//     return multiplyByThree(res);
+//   })
+//   .then(res => {
+//     console.log(res);
+//   });
+
+inputNum(3)
+  .then(doubleNum)
+  .then(increaseByTen)
+  .then(multiplyByThree)
+  .then(res => {
+    console.log(res);
+  });
