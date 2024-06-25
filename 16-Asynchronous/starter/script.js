@@ -674,6 +674,7 @@ fetch('https://randomuser.me/api/')
 
 // Question 2
 
+/*
 //https://jsonplaceholder.typicode.com/users/{userId}
 
 //https://jsonplaceholder.typicode.com/posts?userId={userId}
@@ -727,3 +728,4 @@ getUserData(userId);
 // .then(data => {
 //   console.log(data);
 // });
+*/
