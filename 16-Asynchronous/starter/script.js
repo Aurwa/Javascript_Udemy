@@ -793,3 +793,6 @@ inputNum(3)
   .then(res => {
     console.log(res);
   });
+
+const arr = [1, 2, 3, 4, 'grocery list', 'todo'];
+console.log(arr);
