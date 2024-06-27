@@ -5,17 +5,28 @@ form.addEventListener("submit", (event) => {
   let name = event.target.uname.value;
   let email = event.target.email.value;
   let phone = event.target.phone.value;
+  let checkStatus = 0;
 
   let userData = JSON.parse(localStorage.getItem("userDetails")) ?? [];
-  console.log(userData);
 
-  userData.push({
-    name,
-    email,
-    phone,
-  });
+  for (let data of userData) {
+    if (data.email === email || data.phone === phone) {
+      checkStatus = 1;
+      break;
+    }
+  }
 
-  localStorage.setItem("userDetails", JSON.stringify(userData));
+  if (checkStatus === 1) {
+    alert("Email or Phone Already Exists");
+  } else {
+    userData.push({
+      name,
+      email,
+      phone,
+    });
+
+    localStorage.setItem("userDetails", JSON.stringify(userData));
+  }
 
   displayData();
   event.target.reset();
