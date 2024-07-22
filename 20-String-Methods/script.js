@@ -14,6 +14,7 @@ console.log(str2.length);
 */
 
 // slice + substring
+/*
 let str = "The morning is upon us";
 // console.log(str.slice(12));
 // console.log(str.substring(12));
@@ -26,3 +27,16 @@ let str = "The morning is upon us";
 
 console.log(str.slice(16, 12));
 console.log(str.substring(10, 5));
+*/
+
+// split
+/*
+let str = "apple";
+console.log(str.split(""));
+console.log(str.split("", 3));
+*/
+
+// includes
+let str = "apple";
+console.log(str.includes("a"));
+console.log(str.includes("z"));
