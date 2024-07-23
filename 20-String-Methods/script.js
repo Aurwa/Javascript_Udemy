@@ -51,7 +51,20 @@ console.log(str.startsWith("are", 5));
 */
 
 // ends with
-
+/*
 let str = "Cats are cute";
 console.log(str.endsWith("cute"));
 console.log(str.endsWith("are", 8));
+*/
+
+// padStart and padEnd
+/*
+console.log("abc".padStart(5, "*"));
+console.log("abc".padEnd(9, "*"));
+*/
+
+// search
+let str = "The rain in SPAIN stays mostly in the plains";
+console.log(str.search(/ain/));
+console.log(str.search(/AIN/));
+console.log(str.search(/AIN/i));
