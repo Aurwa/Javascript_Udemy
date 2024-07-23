@@ -37,6 +37,14 @@ console.log(str.split("", 3));
 */
 
 // includes
+/*
 let str = "apple";
 console.log(str.includes("a"));
 console.log(str.includes("z"));
+*/
+
+// starts with
+
+let str = "Cats are cute";
+console.log(str.startsWith("Cats"));
+console.log(str.startsWith("are", 5));
