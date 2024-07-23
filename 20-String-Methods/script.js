@@ -44,7 +44,14 @@ console.log(str.includes("z"));
 */
 
 // starts with
-
+/*
 let str = "Cats are cute";
 console.log(str.startsWith("Cats"));
 console.log(str.startsWith("are", 5));
+*/
+
+// ends with
+
+let str = "Cats are cute";
+console.log(str.endsWith("cute"));
+console.log(str.endsWith("are", 8));
