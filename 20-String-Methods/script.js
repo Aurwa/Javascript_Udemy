@@ -64,7 +64,22 @@ console.log("abc".padEnd(9, "*"));
 */
 
 // search
+/*
 let str = "The rain in SPAIN stays mostly in the plains";
 console.log(str.search(/ain/));
 console.log(str.search(/AIN/));
 console.log(str.search(/AIN/i));
+*/
+
+// match
+/*
+let str = "The rain in SPAIN stays mainly in the plains";
+console.log(str.match(/ain/));
+console.log(str.match(/ain/g));
+console.log(str.match(/ain/gi));
+*/
+
+// matchAll
+let str = "The rain in SPAIN stays mainly in the plains";
+let res = str.matchAll(/ain/g);
+console.log([...res]);
