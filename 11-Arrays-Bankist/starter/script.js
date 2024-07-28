@@ -345,4 +345,4 @@ const diceRolls = Array.from({ length: 15 }, (_, i) => {
   return Math.floor(Math.random() * 6 + 1);
 });
 
-console.log(diceRolls);
+// console.log(diceRolls);
