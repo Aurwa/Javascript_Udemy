@@ -27,7 +27,7 @@ letters.forEach((letter, index, arr) => {
 */
 
 // map
-
+/*
 const nums = [1, 2, 3, 4, 5];
 let res = 1;
 nums.map((num) => {
@@ -69,3 +69,33 @@ let nums2 = strNum.map((num) => {
 
 // console.log(nums2);
 // console.log(typeof nums2[0]);
+*/
+
+// filter
+
+const nums = [1, 2, 3, 4, 5, 6];
+let odd = nums.filter((num) => {
+  return num % 2 !== 0;
+});
+// console.log(odd);
+
+const people = [
+  { name: "A", age: 35 },
+  { name: "B", age: 15 },
+  { name: "C", age: 26 },
+];
+
+let adults = people.filter((person) => {
+  return person.age >= 18;
+});
+// console.log(adults);
+
+const duplicates = [1, 2, 3, 1];
+
+let unique = duplicates.filter((item, index, arr) => {
+  if (arr.indexOf(item) === index) {
+    return item;
+  }
+});
+
+// console.log(unique);
