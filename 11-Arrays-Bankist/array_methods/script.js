@@ -72,7 +72,7 @@ let nums2 = strNum.map((num) => {
 */
 
 // filter
-
+/*
 const nums = [1, 2, 3, 4, 5, 6];
 let odd = nums.filter((num) => {
   return num % 2 !== 0;
@@ -99,3 +99,29 @@ let unique = duplicates.filter((item, index, arr) => {
 });
 
 // console.log(unique);
+*/
+
+// printing how many times each item is repeated
+
+// forEach
+let nums = [1, 2, 3, 4, 1, 2];
+let count = {};
+nums.forEach((num) => {
+  if (count[num]) {
+    count[num]++;
+  } else {
+    count[num] = 1;
+  }
+});
+
+// console.log(count);
+
+// printing unique values
+//filter
+let letters = ["a", "c", "a", "b", "d"];
+const uniqueVal = letters.filter((letter, index, arr) => {
+  if (arr.indexOf(letter) === index) {
+    return arr;
+  }
+});
+console.log(uniqueVal);
