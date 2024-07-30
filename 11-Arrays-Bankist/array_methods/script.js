@@ -102,7 +102,7 @@ let unique = duplicates.filter((item, index, arr) => {
 */
 
 // printing how many times each item is repeated
-
+/*
 // forEach
 let nums = [1, 2, 3, 4, 1, 2];
 let count = {};
@@ -125,3 +125,4 @@ const uniqueVal = letters.filter((letter, index, arr) => {
   }
 });
 console.log(uniqueVal);
+*/
