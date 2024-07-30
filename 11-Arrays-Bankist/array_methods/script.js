@@ -293,7 +293,7 @@ sales.forEach((sale) => {
 */
 
 // map
-
+/*
 // 1. Create array of full names
 const users = [
   { firstName: "John", lastName: "Doe" },
@@ -338,3 +338,60 @@ const updatedEvents = events.map((event) => {
   return { ...event, date: updatedDate };
 });
 console.log(updatedEvents);
+*/
+
+// filter
+
+// 1. Filter active users
+const users = [
+  { id: 1, name: "Alice", isActive: true },
+  { id: 2, name: "Bob", isActive: false },
+];
+
+const activeUsers = users.filter((user) => {
+  if (user.isActive === true) {
+    return user;
+  }
+});
+// console.log(activeUsers);
+
+// 3. Filter events after current date
+const events = [
+  { name: "Event One", date: "2023-08-15" },
+  { name: "Event Two", date: "2023-09-10" },
+  { name: "Event Two", date: "2023-08-1" },
+];
+const currentDate = new Date("2023-08-10");
+
+let upcomingEvents = events.filter((event) => {
+  let eventDate = new Date(event.date);
+  if (currentDate < eventDate) {
+    return event;
+  }
+});
+// console.log(upcomingEvents);
+
+// 4. Email Validation
+const emails = ["test@example.com", "invalid-email", "user@domain.com"];
+
+const regex =
+  /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+let validEmail = emails.filter((email) => {
+  if (email.match(regex)) {
+    return email;
+  }
+});
+// console.log(validEmail);
+
+// 5. Filter completed tasks
+const tasks = [
+  { taskName: "Task One", isCompleted: true },
+  { taskName: "Task Two", isCompleted: false },
+];
+
+let completedTasks = tasks.filter((task) => {
+  if (task.isCompleted === true) {
+    return { ...tasks };
+  }
+});
+// console.log(completedTasks);
