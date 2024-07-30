@@ -128,6 +128,7 @@ console.log(uniqueVal);
 */
 
 // printing only unique values
+/*
 let nums = [1, 2, 3, 1, 4, 2, 5];
 let uniqueNums = nums.filter((num, index, arr) => {
   if (arr.indexOf(num) === index) {
@@ -136,3 +137,32 @@ let uniqueNums = nums.filter((num, index, arr) => {
 });
 
 console.log(uniqueNums);
+*/
+
+// Array Practice - forEach method
+
+// 1. Print each number
+let arr = [1, 2, 3, 4, 5];
+arr.forEach((num) => {
+  // console.log(num);
+});
+
+// 2. Sum of numbers
+let nums = [1, 1, 1, 1, 1, 5];
+let sum = 0;
+nums.forEach((num) => {
+  sum += num;
+});
+// console.log(sum);
+
+// 3. Print Elements with Index
+let items = ["spoons", "tables", "chairs", "books"];
+items.forEach((item, index) => {
+  // console.log(item + ": " + index);
+});
+
+// 4. Convert Array Elements to Strings
+let numbers = [1, 2, 3, 4];
+numbers.forEach((num) => {
+  // console.log(String(num));
+});
