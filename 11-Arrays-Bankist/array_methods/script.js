@@ -140,7 +140,7 @@ console.log(uniqueNums);
 */
 
 // Array Practice - forEach method
-
+/*
 // 1. Print each number
 let arr = [1, 2, 3, 4, 5];
 arr.forEach((num) => {
@@ -166,3 +166,39 @@ let numbers = [1, 2, 3, 4];
 numbers.forEach((num) => {
   // console.log(String(num));
 });
+*/
+
+// Array Practice - map method
+
+// 1.Square of Numbers
+let nums = [1, 2, 3, 4];
+let square = nums.map((num) => {
+  return num * num;
+});
+// console.log(square);
+
+// 2. Uppercase Strings
+let fruits = ["apple", "banana", "orange"];
+let uppercase = fruits.map((fruit) => {
+  return fruit.toUpperCase();
+});
+// console.log(uppercase);
+
+// 3. Object Transformation
+const person = [
+  { name: "A", age: 25 },
+  { name: "B", age: 26 },
+  { name: "C", age: 27 },
+];
+
+const newPerson = person.map((item) => {
+  return `${item.name} is ${item.age} years old.`;
+});
+// console.log(newPerson);
+
+// 4. Length of Strings
+const strings = ["apple", "cats", "poodle"];
+let strLen = strings.map((len) => {
+  return len.length;
+});
+// console.log(strLen);
