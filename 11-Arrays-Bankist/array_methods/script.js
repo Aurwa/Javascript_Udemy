@@ -169,7 +169,7 @@ numbers.forEach((num) => {
 */
 
 // Array Practice - map method
-
+/*
 // 1.Square of Numbers
 let nums = [1, 2, 3, 4];
 let square = nums.map((num) => {
@@ -202,3 +202,139 @@ let strLen = strings.map((len) => {
   return len.length;
 });
 // console.log(strLen);
+*/
+
+// Array Practice - filter method
+/*
+// 1. Filter Even Numbers
+const nums = [1, 2, 3, 4, 5, 6, 7, 8];
+let even = nums.filter((num) => {
+  if (num % 2 === 0) {
+    return num;
+  }
+});
+// console.log(even);
+
+// 2. Filter Long Strings
+const items = ["trees", "flowers", "butterfly", "synchoronous"];
+let moreThanFive = items.filter((item) => {
+  return item.length > 5;
+});
+// console.log(moreThanFive);
+
+// 3. Filter by Value
+const array = ["chair", "notebook", "america", "house"];
+function filterByValue(arr, length) {
+  const x = arr.filter((item) => {
+    if (item.length === length) {
+      return item;
+    }
+  });
+  return x;
+}
+const filteredArray = filterByValue(array, 5);
+// console.log(filteredArray);
+*/
+
+// forEach
+/*
+// 1. Updating the inventory
+
+const inventory = [
+  { name: "Apple", quantity: 10 },
+  { name: "Banana", quantity: 0 },
+  { name: "Cherry", quantity: 20 },
+];
+const amount = 2;
+
+inventory.forEach((item) => {
+  if (item.quantity > 0) {
+    // console.log(`${item.name}: ${item.quantity - amount}`);
+  }
+});
+
+// 3. Sending notification emails
+const users = [
+  { id: 1, email: "user1@example.com" },
+  { id: 2, email: "user2@example.com" },
+];
+const message = "This is a notification email";
+function sendEmail(email, message) {
+  console.log(email);
+  console.log(message);
+}
+
+users.forEach((user) => {
+  // sendEmail(user.email, message);
+});
+
+// 4. Processing Orders
+const orders = [
+  { orderId: 101, status: "pending" },
+  { orderId: 102, status: "pending" },
+];
+
+orders.forEach((order) => {
+  // console.log(
+  `orderId: ${order.orderId}, status: ${(order.status = "processed")}`;
+  // );
+});
+
+// 5. Calculating Total Sales
+const sales = [
+  { itemId: 1, amount: 100 },
+  { itemId: 2, amount: 150 },
+];
+let total = 0;
+sales.forEach((sale) => {
+  total += sale.amount;
+});
+// console.log(total);
+*/
+
+// map
+
+// 1. Create array of full names
+const users = [
+  { firstName: "John", lastName: "Doe" },
+  { firstName: "Jane", lastName: "Smith" },
+];
+
+let fullName = users.map((user) => {
+  return user.firstName + " " + user.lastName;
+});
+// console.log(fullName);
+
+// 2. Convert prices to EUR
+const products = [
+  { name: "Laptop", priceUSD: 1000 },
+  { name: "Phone", priceUSD: 500 },
+];
+
+let updatedPrice = products.map((product) => {
+  return product.priceUSD * 0.85;
+});
+// console.log(updatedPrice);
+
+// 3. Create array of HTML strings
+const books = [
+  { title: "Book One", author: "Author One" },
+  { title: "Book Two", author: "Author Two" },
+];
+
+let bookList = books.map((book) => {
+  return `<li>${book.title} by ${book.author}</li>`;
+});
+// console.log(bookList.join("\n"));
+
+// 4. Format dates to MM/DD/YYYY
+const events = [
+  { name: "Event One", date: "2023-08-15" },
+  { name: "Event Two", date: "2023-09-10" },
+];
+const updatedEvents = events.map((event) => {
+  const [year, month, date] = event.date.split("-");
+  const updatedDate = `${month}-${year}-${date}`;
+  return { ...event, date: updatedDate };
+});
+console.log(updatedEvents);
