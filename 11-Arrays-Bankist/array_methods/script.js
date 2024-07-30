@@ -341,7 +341,7 @@ console.log(updatedEvents);
 */
 
 // filter
-
+/*
 // 1. Filter active users
 const users = [
   { id: 1, name: "Alice", isActive: true },
@@ -395,3 +395,69 @@ let completedTasks = tasks.filter((task) => {
   }
 });
 // console.log(completedTasks);
+*/
+
+// ******************************************
+// Array reduce method
+
+let nums = [1, 2, 13, 4, 5];
+const max = nums.reduce((accumulator, num) => {
+  if (accumulator > num) {
+    return accumulator;
+  } else {
+    return num;
+  }
+}, 0);
+// console.log(max);
+
+const store = [
+  {
+    product: "laptop",
+    value: 1000,
+    count: 3,
+  },
+  {
+    product: "desktop",
+    value: 1500,
+    count: 4,
+  },
+  {
+    product: "mobile",
+    value: 500,
+    count: 10,
+  },
+];
+
+const productWorth = store.reduce((acc, item) => {
+  // const price = item.value * item.count;
+  // return accumulator + price;
+  acc[item.product] = item.value * item.count;
+  return acc;
+}, {});
+
+// console.log(productWorth);
+
+// Array Practice - reduce
+
+// 1. Flatten an Array
+const arrays = [
+  [1, 2, 3],
+  [4, 5],
+  [6, 7, 8, 9],
+];
+const flatArray = arrays.reduce((acc, arr) => {
+  return acc.concat(arr);
+}, []);
+// console.log(flatArray);
+
+// 2. Count Occurrences of Values
+const fruits = ["apple", "banana", "apple", "orange", "banana", "apple"];
+const occurence = fruits.reduce((acc, fruit) => {
+  if (acc[fruit]) {
+    acc[fruit]++;
+  } else {
+    acc[fruit] = 1;
+  }
+  return acc;
+}, {});
+console.log(occurence);
