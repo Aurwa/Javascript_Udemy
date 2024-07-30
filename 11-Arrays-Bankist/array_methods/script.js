@@ -126,3 +126,13 @@ const uniqueVal = letters.filter((letter, index, arr) => {
 });
 console.log(uniqueVal);
 */
+
+// printing only unique values
+let nums = [1, 2, 3, 1, 4, 2, 5];
+let uniqueNums = nums.filter((num, index, arr) => {
+  if (arr.indexOf(num) === index) {
+    return num;
+  }
+});
+
+console.log(uniqueNums);
