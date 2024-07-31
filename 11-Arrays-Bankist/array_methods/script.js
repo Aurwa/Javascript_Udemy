@@ -551,6 +551,7 @@ console.log(greaterThan2);
 */
 
 // Polyfill for reduce()
+/*
 Array.prototype.myReduce = function (cb, initialVal) {
   let accumulator = initialVal;
 
@@ -569,3 +570,25 @@ let sum = nums.myReduce((acc, num) => {
   return acc + num;
 }, 0);
 console.log(sum);
+*/
+
+let students = [
+  { name: "Piyush", rollNumber: 31, marks: 80 },
+  { name: "Jenny", rollNumber: 15, marks: 69 },
+  { name: "Kaushal", rollNumber: 16, marks: 35 },
+  { name: "Dilpreet", rollNumber: 7, marks: 55 },
+];
+
+let add20 = students
+  .map((student) => {
+    if (student.marks < 60) {
+      student.marks += 20;
+    }
+    return student;
+  })
+  .filter((student) => student.marks > 60)
+  .reduce((acc, curr) => {
+    return acc + curr.marks;
+  }, 0);
+
+console.log(add20);
