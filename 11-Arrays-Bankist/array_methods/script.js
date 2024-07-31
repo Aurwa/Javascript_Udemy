@@ -400,14 +400,14 @@ let completedTasks = tasks.filter((task) => {
 // ******************************************
 // Array reduce method
 
-let nums = [1, 2, 13, 4, 5];
-const max = nums.reduce((accumulator, num) => {
-  if (accumulator > num) {
-    return accumulator;
-  } else {
-    return num;
-  }
-}, 0);
+// let nums = [1, 2, 13, 4, 5];
+// const max = nums.reduce((accumulator, num) => {
+//   if (accumulator > num) {
+//     return accumulator;
+//   } else {
+//     return num;
+//   }
+// }, 0);
 // console.log(max);
 
 // const store = [
@@ -438,7 +438,7 @@ const max = nums.reduce((accumulator, num) => {
 // console.log(productWorth);
 
 // Array Practice - reduce
-
+/*
 // 1. Flatten an Array
 const arrays = [
   [1, 2, 3],
@@ -495,4 +495,77 @@ const productsWorth = store.reduce((acc, item) => {
   acc[item.product] = item.value * item.count;
   return acc;
 }, {});
-console.log(productsWorth);
+// console.log(productsWorth);
+*/
+
+// Polyfill for map()
+/*
+Array.prototype.myMap = function (cb) {
+  let temp = [];
+  for (let i = 0; i < this.length; i++) {
+    temp.push(cb(this[i], i, this));
+  }
+  return temp;
+};
+
+let numbers = [1, 2, 3, 4];
+let multiplyByThree = numbers.myMap((num) => {
+  return num * 3;
+});
+console.log(multiplyByThree);
+
+
+Array.prototype.myMap = function (cb) {
+  let temp = [];
+  for (let i = 0; i < this.length; i++) {
+    temp.push(cb(this[i], i, this));
+  }
+  return temp;
+};
+
+let nums = [2, 4, 6];
+let multiplyByTwo = nums.myMap((num) => {
+  return num * 2;
+});
+console.log(multiplyByTwo);
+*/
+
+// Polyfill for filter()
+/*
+Array.prototype.myFilter = function (cb) {
+  let temp = [];
+  console.log(cb);
+  for (let i = 0; i < this.length; i++) {
+    if (cb(this[i], i, this)) {
+      temp.push(this[i]);
+    }
+  }
+  return temp;
+};
+
+let nums = [1, 2, 3, 4, 5];
+let greaterThan2 = nums.myFilter((num) => {
+  return num > 2;
+});
+console.log(greaterThan2);
+*/
+
+// Polyfill for reduce()
+Array.prototype.myReduce = function (cb, initialVal) {
+  let accumulator = initialVal;
+
+  for (let i = 0; i < this.length; i++) {
+    if (accumulator) {
+      accumulator = cb(accumulator, this[i], i, this);
+    } else {
+      accumulator = this[i];
+    }
+  }
+  return accumulator;
+};
+
+let nums = [1, 2, 3, 4, 5];
+let sum = nums.myReduce((acc, num) => {
+  return acc + num;
+}, 0);
+console.log(sum);
