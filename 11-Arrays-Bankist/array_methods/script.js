@@ -570,7 +570,7 @@ let sum = nums.myReduce((acc, num) => {
   return acc + num;
 }, 0);
 console.log(sum);
-*/
+
 
 let students = [
   { name: "Piyush", rollNumber: 31, marks: 80 },
@@ -591,4 +591,16 @@ let add20 = students
     return acc + curr.marks;
   }, 0);
 
-console.log(add20);
+// console.log(add20);
+*/
+
+// slice
+const nums = [1, 2, 3, 4, 5];
+// console.log(nums.slice(-4));
+
+// sort
+let numbers = [5, 100, 20, 10];
+let a;
+let b;
+numbers.sort();
+// console.log(numbers);
