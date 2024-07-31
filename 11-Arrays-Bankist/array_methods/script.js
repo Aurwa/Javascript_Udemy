@@ -410,30 +410,30 @@ const max = nums.reduce((accumulator, num) => {
 }, 0);
 // console.log(max);
 
-const store = [
-  {
-    product: "laptop",
-    value: 1000,
-    count: 3,
-  },
-  {
-    product: "desktop",
-    value: 1500,
-    count: 4,
-  },
-  {
-    product: "mobile",
-    value: 500,
-    count: 10,
-  },
-];
+// const store = [
+//   {
+//     product: "laptop",
+//     value: 1000,
+//     count: 3,
+//   },
+//   {
+//     product: "desktop",
+//     value: 1500,
+//     count: 4,
+//   },
+//   {
+//     product: "mobile",
+//     value: 500,
+//     count: 10,
+//   },
+// ];
 
-const productWorth = store.reduce((acc, item) => {
-  // const price = item.value * item.count;
-  // return accumulator + price;
-  acc[item.product] = item.value * item.count;
-  return acc;
-}, {});
+// const productWorth = store.reduce((acc, item) => {
+// const price = item.value * item.count;
+// return accumulator + price;
+//   acc[item.product] = item.value * item.count;
+//   return acc;
+// }, {});
 
 // console.log(productWorth);
 
@@ -460,4 +460,39 @@ const occurence = fruits.reduce((acc, fruit) => {
   }
   return acc;
 }, {});
-console.log(occurence);
+// console.log(occurence);
+
+// getting max from an array
+let numbers = [20, 15, 25, 100, 90];
+let maxNumber = numbers.reduce((acc, num) => {
+  if (acc > num) {
+    return acc;
+  } else {
+    return num;
+  }
+});
+// console.log(maxNumber);
+
+const store = [
+  {
+    product: "laptop",
+    value: 1000,
+    count: 3,
+  },
+  {
+    product: "desktop",
+    value: 1500,
+    count: 4,
+  },
+  {
+    product: "mobile",
+    value: 500,
+    count: 10,
+  },
+];
+
+const productsWorth = store.reduce((acc, item) => {
+  acc[item.product] = item.value * item.count;
+  return acc;
+}, {});
+console.log(productsWorth);
