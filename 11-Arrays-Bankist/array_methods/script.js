@@ -1,3 +1,6 @@
+// We can use concat() and slice() and spread method to make shallow copies
+// [...num].arrayChaining
+
 // forEach
 /*
 let nums = [1, 2, 3, 4, 5];
@@ -598,28 +601,46 @@ let add20 = students
 // const nums = [1, 2, 3, 4, 5];
 // console.log(nums.slice(-4));
 
-// sort
-let numbers = [5, 100, 20, 10];
-let a;
-let b;
-numbers.sort();
+// Array sort method
+let nums = [200, 20, 100, 5, 60];
+nums.sort(function (a, b) {
+  return a - b;
+});
+// console.log(nums);
+
+let a = [1, 2, 3];
+let b = [4, 5, 6];
+// console.log(a.concat(b));
+let c = a.concat();
+// console.log(c);
+
+function createArray(n) {
+  return Array(n)
+    .fill(0)
+    .map((_, i) => {
+      return i + 1;
+    });
+}
+// console.log(createArray(10));
+
+let str = "Coding iss fun!";
+let reversedStr = str.split("").reverse().join("");
+// console.log(reversedStr);
+
+const numbers = [1, 2, 3];
+numbers.unshift(0, -1);
 // console.log(numbers);
 
-// polyfill for reduce
-Array.prototype.myReduce = function (cb, initialVal) {
-  let accumulator = initialVal;
-  for (let i = 0; i < this.length; i++) {
-    if (accumulator) {
-      accumulator = cb(accumulator, this[i], i, this);
-    } else {
-      accumulator = this[i];
-    }
-  }
-  return accumulator;
-};
+// Array every() method
 
-let nums = [1, 2, 3, 4, 5];
-let sum = nums.myReduce((acc, curr) => {
-  return acc + curr;
+const nums1 = [1, 2, 3, 4, 5];
+let res = nums1.every((item) => {
+  return item > 0;
 });
-console.log(sum);
+// console.log(res);
+
+const people = [{ name: "A" }, { name: "B" }, { surname: "C" }];
+let result = people.every((person) => {
+  return person.name;
+});
+console.log(result);
