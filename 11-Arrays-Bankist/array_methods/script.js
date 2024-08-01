@@ -643,4 +643,18 @@ const people = [{ name: "A" }, { name: "B" }, { surname: "C" }];
 let result = people.every((person) => {
   return person.name;
 });
-console.log(result);
+// console.log(result);
+
+// Array from() method
+let numStr = "1234567";
+let r = Array.from(numStr, mapFun);
+// console.log(r);
+
+function mapFun(val) {
+  return Number(val);
+}
+
+// Using Array.from to remove duplicates
+let duplicates = [1, 2, 3, 1, 4, 5, 6, 2, 4, 7];
+let unique = Array.from(new Set(duplicates));
+console.log(unique);
