@@ -595,7 +595,7 @@ let add20 = students
 */
 
 // slice
-const nums = [1, 2, 3, 4, 5];
+// const nums = [1, 2, 3, 4, 5];
 // console.log(nums.slice(-4));
 
 // sort
@@ -604,3 +604,22 @@ let a;
 let b;
 numbers.sort();
 // console.log(numbers);
+
+// polyfill for reduce
+Array.prototype.myReduce = function (cb, initialVal) {
+  let accumulator = initialVal;
+  for (let i = 0; i < this.length; i++) {
+    if (accumulator) {
+      accumulator = cb(accumulator, this[i], i, this);
+    } else {
+      accumulator = this[i];
+    }
+  }
+  return accumulator;
+};
+
+let nums = [1, 2, 3, 4, 5];
+let sum = nums.myReduce((acc, curr) => {
+  return acc + curr;
+});
+console.log(sum);
