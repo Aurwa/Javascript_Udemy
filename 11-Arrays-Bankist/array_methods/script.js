@@ -623,8 +623,8 @@ function createArray(n) {
 }
 // console.log(createArray(10));
 
-let str = "Coding iss fun!";
-let reversedStr = str.split("").reverse().join("");
+// let str = "Coding iss fun!";
+// let reversedStr = str.split("").reverse().join("");
 // console.log(reversedStr);
 
 const numbers = [1, 2, 3];
@@ -640,9 +640,9 @@ let res = nums1.every((item) => {
 // console.log(res);
 
 const people = [{ name: "A" }, { name: "B" }, { surname: "C" }];
-let result = people.every((person) => {
-  return person.name;
-});
+// let result = people.every((person) => {
+// return person.name;
+// });
 // console.log(result);
 
 // Array from() method
@@ -699,8 +699,26 @@ function firstEle(arr, n) {
 
 // 4. last element of an array
 function last(arr, n) {
-  return arr.slice(Math.max(arr.length - n, 0));
+  // return arr.slice(Math.max(arr.length - n, 0));
 }
 
-console.log(last([7, 9, 0, -1], 3));
-console.log(last([7, 9, 0, -2], 6));
+// console.log(last([7, 9, 0, -1], 3));
+// console.log(last([7, 9, 0, -2], 6));
+
+// 5. joining arrays
+myColor = ["Red", "Green", "White", "Black"];
+// console.log(myColor.join("+"));
+
+// 6.
+let num = window.prompt();
+let str = num.toString();
+let result = [str[0]];
+for (let i = 1; i < str.length; i++) {
+  if (str[i - 1] % 2 == 0 && str[i] % 2 == 0) {
+    result.push("-", str[i]);
+  } else {
+    result.push(str[i]);
+  }
+}
+
+console.log(result.join(""));
