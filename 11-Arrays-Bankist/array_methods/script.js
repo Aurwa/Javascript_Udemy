@@ -710,15 +710,22 @@ myColor = ["Red", "Green", "White", "Black"];
 // console.log(myColor.join("+"));
 
 // 6.
-let num = window.prompt();
-let str = num.toString();
-let result = [str[0]];
-for (let i = 1; i < str.length; i++) {
-  if (str[i - 1] % 2 == 0 && str[i] % 2 == 0) {
-    result.push("-", str[i]);
-  } else {
-    result.push(str[i]);
-  }
-}
+// let num = window.prompt();
+// let str = num.toString();
+// let result = [str[0]];
+// for (let i = 1; i < str.length; i++) {
+//   if (str[i - 1] % 2 == 0 && str[i] % 2 == 0) {
+//     result.push("-", str[i]);
+//   } else {
+//     result.push(str[i]);
+//   }
+// }
 
-console.log(result.join(""));
+// console.log(result.join(""));
+
+// 7. sorting an array
+let arr1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
+arr1.sort((a, b) => {
+  return a - b;
+});
+console.log(arr1);
