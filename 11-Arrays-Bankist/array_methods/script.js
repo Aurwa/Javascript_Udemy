@@ -657,4 +657,50 @@ function mapFun(val) {
 // Using Array.from to remove duplicates
 let duplicates = [1, 2, 3, 1, 4, 5, 6, 2, 4, 7];
 let unique = Array.from(new Set(duplicates));
-console.log(unique);
+// console.log(unique);
+
+function phoneticLookup(val) {
+  let result = "";
+  const lookup = {
+    alpha: "Adams",
+    bravo: "Boston",
+    charlie: "Chicago",
+    delta: "Denver",
+    echo: "Easy",
+    foxtrot: "Frank",
+  };
+  result = lookup[val];
+  return result;
+}
+
+// console.log(phoneticLookup("charlie"));
+
+// 1. isArray or not
+function is_Array(val) {
+  return Array.isArray(val);
+}
+
+// console.log(is_Array("w3resource"));
+// console.log(is_Array([1, 2, 3, 4, 5]));
+
+// 2. Clone an array
+function cloneArray(arr) {
+  return arr.slice();
+}
+
+// console.log(cloneArray([1, 2, 3, 4, 5]));
+
+// 3. first element of an array
+function firstEle(arr, n) {
+  return arr.slice(0, n);
+}
+
+// console.log(firstEle([7, 9, 0, -2], 6));
+
+// 4. last element of an array
+function last(arr, n) {
+  return arr.slice(Math.max(arr.length - n, 0));
+}
+
+console.log(last([7, 9, 0, -1], 3));
+console.log(last([7, 9, 0, -2], 6));
