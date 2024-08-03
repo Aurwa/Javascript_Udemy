@@ -728,4 +728,9 @@ let arr1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
 arr1.sort((a, b) => {
   return a - b;
 });
-console.log(arr1);
+// console.log(arr1);
+
+// 1. Reverse an array
+let arr = [1, 2, 3, 4, 5];
+arr.reverse();
+console.log(arr);
