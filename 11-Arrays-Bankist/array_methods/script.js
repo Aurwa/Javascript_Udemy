@@ -724,10 +724,10 @@ myColor = ["Red", "Green", "White", "Black"];
 // console.log(result.join(""));
 
 // 7. sorting an array
-let arr1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
-arr1.sort((a, b) => {
-  return a - b;
-});
+// let arr1 = [-3, 8, 7, 6, 5, -4, 3, 2, 1];
+// arr1.sort((a, b) => {
+//   return a - b;
+// });
 // console.log(arr1);
 
 // 1. Reverse an array
@@ -736,24 +736,24 @@ arr1.sort((a, b) => {
 // console.log(arr);
 
 // 2. Maximum in an array
-let arr = [3, 5, 4, 2, 5, 9, 2, 1];
-let max = arr.reduce((acc, curr) => {
-  if (acc > curr) {
-    return acc;
-  } else {
-    return curr;
-  }
-}, 0);
-console.log(max);
+// let arr = [3, 5, 4, 2, 5, 9, 2, 1];
+// let max = arr.reduce((acc, curr) => {
+//   if (acc > curr) {
+//     return acc;
+//   } else {
+//     return curr;
+//   }
+// }, 0);
+// console.log(max);
 
 // Using reduce
-let min = arr.reduce((acc, curr) => {
-  if (acc > curr) {
-    return curr;
-  } else {
-    return acc;
-  }
-});
+// let min = arr.reduce((acc, curr) => {
+//   if (acc > curr) {
+//     return curr;
+//   } else {
+//     return acc;
+//   }
+// });
 
 // console.log(min);
 
@@ -777,5 +777,79 @@ let min = arr.reduce((acc, curr) => {
 // console.log(min1);
 
 // Using spread operator
-let min1 = Math.min(...arr);
-console.log(min1);
+// let min1 = Math.min(...arr);
+// console.log(min1);
+
+// 3. Array Sum
+// let arr = [1, 2, 3, 4, 5, 6];
+// let sum = arr.reduce((acc, curr) => {
+//   return acc + curr;
+// }, 0);
+// console.log(sum);
+
+// 4. Remove item
+// let arr = [1, 2, 3, 4, 5];
+// let newArr = arr.slice(2, 3);
+// console.log(newArr);
+
+// 5. If two arrays are equal
+
+// Way 1
+// let arr1 = [1, 2, 3];
+
+// function areEqual(arr) {
+//   if (arr.length !== arr1.length) {
+//     return false;
+//   }
+
+//   for (let i = 0; i < arr.length; i++) {
+//     if (arr1[i] !== arr[i]) {
+//       return false;
+//     }
+//   }
+//   return true;
+// }
+
+// let equal = areEqual([1, 2, 3]);
+// console.log(equal);
+
+// Way 2 - every
+// function equalArrays(arr1, arr2) {
+//   if (arr1.length !== arr2.length) {
+//     return false;
+//   }
+
+//   return arr1.every((num, index) => {
+//     return num === arr2[index];
+//   });
+// }
+// let arr1 = [1, 2, 3];
+// let arr2 = [1, 2, 5];
+// console.log(equalArrays(arr1, arr2));
+
+// Method  - every()
+
+// let arr1 = [1, 2, 3];
+// let arr2 = [1, 2, 3];
+
+// function areEqual(arr1, arr2) {
+//   if (arr1.length !== arr2.length) {
+//     return false;
+//   }
+
+//   return arr1.every((ele, i) => {
+//     return ele === arr2[i];
+//   });
+// }
+
+// console.log(areEqual(arr1, arr2));
+
+// Checking if an array is palindrome
+let arr = [1, 2, 3, 2, 1];
+function isPalindrome(arr) {
+  return arr.every((ele, index, arr) => {
+    return ele === arr[arr.length - 1 - index];
+  });
+}
+
+console.log(isPalindrome(arr));
