@@ -854,17 +854,14 @@ myColor = ["Red", "Green", "White", "Black"];
 
 // console.log(isPalindrome(arr));
 
-// Using reverse
+// Using recursion
 
 let arr = [1, 2, 3, 2, 1];
 
 function isPalindrome(arr) {
-  for (let i = 0; i < arr.length / 2; i++) {
-    if (arr[i] !== arr[arr.length - 1 - i]) {
-      return false;
-    }
-  }
-  return true;
+  if (arr.length <= 1) return true;
+  if (arr[0] !== arr[arr.length - 1]) return false;
+  return isPalindrome(arr.slice(1, arr.length - 1));
 }
 
 console.log(isPalindrome(arr));
