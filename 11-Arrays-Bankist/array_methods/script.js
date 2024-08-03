@@ -731,6 +731,51 @@ arr1.sort((a, b) => {
 // console.log(arr1);
 
 // 1. Reverse an array
-let arr = [1, 2, 3, 4, 5];
-arr.reverse();
-console.log(arr);
+// let arr = [1, 2, 3, 4, 5];
+// arr.reverse();
+// console.log(arr);
+
+// 2. Maximum in an array
+let arr = [3, 5, 4, 2, 5, 9, 2, 1];
+let max = arr.reduce((acc, curr) => {
+  if (acc > curr) {
+    return acc;
+  } else {
+    return curr;
+  }
+}, 0);
+console.log(max);
+
+// Using reduce
+let min = arr.reduce((acc, curr) => {
+  if (acc > curr) {
+    return curr;
+  } else {
+    return acc;
+  }
+});
+
+// console.log(min);
+
+// using forEach
+
+// let min1;
+// arr.forEach((num) => {
+//   min1 = arr[0];
+//   if (num < min1) {
+//     min1 = num;
+//   }
+// });
+// console.log(min1);
+
+// Using sort
+
+// let sortedNums = arr.sort((a, b) => {
+//   return a - b;
+// });
+// let min1 = sortedNums[0];
+// console.log(min1);
+
+// Using spread operator
+let min1 = Math.min(...arr);
+console.log(min1);
