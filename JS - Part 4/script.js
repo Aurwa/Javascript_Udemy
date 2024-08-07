@@ -88,11 +88,21 @@ while (true) {
 
 // factorial
 
-let num = 5;
-let fac = 1;
+let arr = [3, 4, 555, 66, 100, 5, 2];
+let max = 0;
 
-for (let i = 1; i <= num; i++) {
-  fac *= i;
+for (let i = 0; i < arr.length; i++) {
+  if (arr[i] > max) {
+    max = arr[i];
+  }
 }
 
-console.log(fac);
+// let max = arr.reduce((acc, num) => {
+//   if (acc > num) {
+//     return acc;
+//   } else {
+//     return num;
+//   }
+// });
+
+console.log(max);
