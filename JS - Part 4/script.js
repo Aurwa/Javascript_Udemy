@@ -28,10 +28,10 @@ for (let i = 2; i < 15; i += 2) {
 //   guess = prompt("Take another guess");
 // }
 
-let heros = [
-  ["ironman", "spiderman"],
-  ["wonder woman", "flash"],
-];
+// let heros = [
+//   ["ironman", "spiderman"],
+//   ["wonder woman", "flash"],
+// ];
 
 // for (list of heros) {
 //   for (hero of list) {
@@ -50,7 +50,7 @@ let heros = [
 // }
 
 // Basic Todo
-
+/*
 let todo = [];
 let tasks = prompt("What do you want to do");
 while (true) {
@@ -72,3 +72,27 @@ while (true) {
   }
   tasks = prompt("What do you want to do");
 }
+*/
+
+// delete occurences
+
+// let arr = [1, 2, 3, 4, 5, 6, 2, 3];
+// let num = 3;
+
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] === num) {
+//     arr.splice(i, 1);
+//   }
+// }
+// console.log(arr);
+
+// factorial
+
+let num = 5;
+let fac = 1;
+
+for (let i = 1; i <= num; i++) {
+  fac *= i;
+}
+
+console.log(fac);
