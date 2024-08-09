@@ -83,3 +83,52 @@ let func = oddOrEven("even");
 // }
 
 // console.log(uniqueChar(str));
+
+// longest country name
+
+// let countries = ["Australia", "Germany", "United States of America"];
+
+// function longestCountry(arr) {
+//   let country = arr[0];
+
+//   for (let i = 0; i < countries.length; i++) {
+//     if (arr[i].length > country.length) {
+//       country = arr[i];
+//     }
+//   }
+//   return country;
+// }
+
+// console.log(longestCountry(countries));
+
+// count vowels in a string
+
+// let str = "abcdisifevenumbrella";
+// let count = 0;
+
+// function countVowels(str) {
+//   for (let i = 0; i < str.length; i++) {
+//     if (
+//       str.charAt(i) == "a" ||
+//       str[i] == "e" ||
+//       str[i] == "i" ||
+//       str[i] == "o" ||
+//       str[i] == "u"
+//     ) {
+//       count++;
+//     }
+//   }
+
+//   return count;
+// }
+// console.log(countVowels(str));
+
+// generate random number within range
+
+function randomNum(start, end) {
+  let diff = end - start;
+  let rand = Math.floor(Math.random() * diff) + start;
+  return rand;
+}
+
+console.log(randomNum(5, 10));
