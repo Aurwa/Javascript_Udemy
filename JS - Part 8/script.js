@@ -38,18 +38,59 @@ console.log(ans2);
 // console.log(..."apnacollege");
 
 let arr = [1, 2, 3, 4, 5];
-console.log(...arr);
+let copy = { ...arr };
+// console.log(copy);
+
+// console.log(...arr);
 
 let newArr = [...arr];
-console.log(newArr);
+// console.log(newArr);
 
 let chars = [..."hello"];
-console.log(chars);
+// console.log(chars);
 
 let str = "hello";
 let newStr = str.split("");
-console.log(newStr);
+// console.log(newStr);
 
 let data = {
   email: "zafar@yahoo.com",
+  password: "abcd",
 };
+
+let newData = { ...data, id: 111 };
+// console.log(newData);
+
+function sum(...args) {
+  console.log(args);
+  return args.reduce((acc, curr) => {
+    return acc + curr;
+  }, 0);
+}
+
+// console.log(sum(10, 20, 20));
+
+// function min(a, b, c, d) {
+//   console.log(arguments);
+// }
+
+// min(1, 2, 3, 4);
+
+function min(...args) {
+  return args.reduce((acc, curr) => {});
+}
+
+// de-structuring
+let names = ["bruce", "william", "tony", "spark"];
+let [winner, runnerUp, ...others] = names;
+// console.log(winner, runnerUp);
+// console.log(others);
+
+const student = {
+  username: "karan123",
+  password: 123,
+};
+
+const { username: user, password: pass, city = "Mumbai" } = student;
+console.log(pass);
+// console.log(city);
