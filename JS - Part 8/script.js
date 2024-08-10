@@ -37,6 +37,7 @@ console.log(ans2);
 
 // console.log(..."apnacollege");
 
+/*
 let arr = [1, 2, 3, 4, 5];
 let copy = { ...arr };
 // console.log(copy);
@@ -94,3 +95,45 @@ const student = {
 const { username: user, password: pass, city = "Mumbai" } = student;
 console.log(pass);
 // console.log(city);
+*/
+
+// let arr = [1, 2, 3];
+
+function doubleAndReturn(arr, ...args) {
+  let double = args.map((num) => {
+    return num * 2;
+  });
+  return [...arr, ...double];
+}
+
+console.log(doubleAndReturn([2], 10, 4));
+
+// let obj1 = {
+//   name: "Aurwa",
+//   id: 1,
+// };
+
+// let obj2 = {
+//   name2: "Zed",
+//   id2: 2,
+// };
+
+// const mergeObj = (obj1, obj2) => {
+//   return { ...obj1, ...obj2 };
+// };
+// console.log(mergeObj(obj1, obj2));
+
+const mergeObj = (obj1, obj2) => {
+  const merged = { ...obj1 };
+  for (let key in obj2) {
+    if (merged[key]) {
+      merged[key] = [merged[key], obj2[key]];
+    } else {
+      merged[key] = obj2[key];
+    }
+  }
+  return merged;
+};
+
+console.log(mergeObj({ name: "Aurwa", id: 1 }, { name: "Zed", id: 2 }));
+// Output: { name: ["Aurwa", "Zed"], id: [1, 2] }
