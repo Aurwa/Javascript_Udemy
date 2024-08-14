@@ -29,3 +29,22 @@ let links = document.querySelectorAll(".box a");
 for (link of links) {
   link.style.color = "red";
 }
+
+let p = document.querySelector(".descp");
+
+p.previousElementSibling.style.color = "orange";
+
+let newP = document.createElement("p");
+newP.innerText = "Hi I am the new P.";
+console.dir(newP);
+let body = document.querySelector("body");
+body.appendChild(newP);
+
+let box = document.querySelector(".box");
+let btn = document.createElement("button");
+btn.innerText = "Click me";
+box.appendChild(btn);
+
+newP.append(" Add more text!");
+// newP.append(btn);
+newP.prepend(btn);
