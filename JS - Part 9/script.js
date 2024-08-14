@@ -23,9 +23,9 @@ let img = document.querySelector("img");
 let links = document.querySelectorAll(".box a");
 
 // for (let i = 0; i < links.length; i++) {
-//   links[i].style.color = "red";
+//   links[i].style.color = "green";
 // }
 
 for (link of links) {
-  link.style.color = "green";
+  link.style.color = "red";
 }
