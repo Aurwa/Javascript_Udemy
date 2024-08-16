@@ -21,6 +21,7 @@ for (let i = 0; i < links.length; i++) {
 }
 */
 
+/*
 let body = document.querySelector("body");
 
 let container = document.querySelector(".container");
@@ -36,3 +37,17 @@ let h1 = document.createElement("h1");
 h1.innerText = "I am in inner Div";
 div.appendChild(h1);
 container.appendChild(div);
+*/
+
+let body = document.querySelector("body");
+let input = document.createElement("input");
+let btn = document.createElement("button");
+btn.innerText = "Click me!";
+
+body.append(input, btn);
+input.setAttribute("placeholder", "username");
+btn.setAttribute("id", "btn");
+
+let btnColor = document.querySelector("#btn");
+btnColor.style.color = "white";
+btnColor.style.backgroundColor = "blue";
