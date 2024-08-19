@@ -71,6 +71,7 @@ Function Call and Assignment (e.g., let randomColor = generateColor();):
 Here, you're calling the generateColor function to immediately execute it and retrieve the result. You need the result right away to use in your code (to update the text and background color). Hence, you use parentheses to invoke the function.
 */
 
+/*
 let testBtn = document.querySelector("#btn");
 let p = document.querySelector("p");
 let h1 = document.querySelector("h1");
@@ -83,3 +84,63 @@ function changeCol() {
   console.log(this);
   this.style.backgroundColor = "red";
 }
+*/
+
+// Keyboard Events
+// let inp = document.querySelector("input");
+// let btn2 = document.querySelector("#btn");
+// let form = document.querySelector("form");
+
+// form.addEventListener("submit", function (e) {
+//   e.preventDefault();
+//   let user = this.elements[0];
+//   let password = form.elements[1];
+//   console.log(user.value);
+//   console.log(password.value);
+// });
+
+// inp.addEventListener("keydown", function (e) {
+//   console.log(e);
+//   console.log(e.key);
+//   console.log(e.code);
+// });
+
+/*
+let form = document.querySelector("form");
+
+form.addEventListener("submit", function (e) {
+  e.preventDefault();
+});
+
+let user = document.querySelector("#user");
+user.addEventListener("input", function () {
+  console.log("Value changed: ", user.value);
+});
+*/
+
+/*
+let para = document.querySelector("#para");
+let inp = document.querySelector("#text");
+
+inp.addEventListener("input", function () {
+  // console.log(inp.value);
+  let val = inp.value;
+  para.innerText = val;
+});
+*/
+
+// let changeBtn = document.querySelector("#color");
+// changeBtn.addEventListener("click", function () {
+//   changeBtn.style.backgroundColor = "green";
+// });
+
+let nameInput = document.querySelector("#name");
+let nameHeading = document.querySelector("#nameHead");
+
+nameInput.addEventListener("input", function () {
+  let filteredInput = nameInput.value.replace(/[^a-zA-Z\s]/g, "");
+
+  // replace(/[^a-zA-Z\s]/g, '')
+
+  nameHeading.innerText = filteredInput;
+});
