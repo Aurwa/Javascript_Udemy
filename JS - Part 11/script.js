@@ -53,6 +53,8 @@ ul.addEventListener("click", function (event) {
 });
 */
 
-document.querySelector("#category").addEventListener("click", function (e) {
-  console.log("Parent clicked");
+document.querySelector("#form").addEventListener("keyup", function (e) {
+  if (e.target.dataset.uppercase !== undefined) {
+    e.target.value = e.target.value.toUpperCase();
+  }
 });
