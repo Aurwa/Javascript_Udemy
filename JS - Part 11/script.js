@@ -63,6 +63,8 @@ document.querySelector("#form").addEventListener("keyup", function (e) {
 });
 */
 
+// todo event delegation
+/*
 let btn = document.querySelector("button");
 let ul = document.querySelector("ul");
 let input = document.querySelector("input");
@@ -95,3 +97,4 @@ ul.addEventListener("click", function (e) {
     parent.remove();
   }
 });
+*/
