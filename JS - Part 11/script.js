@@ -53,8 +53,45 @@ ul.addEventListener("click", function (event) {
 });
 */
 
+// event delegation
+/*
+
 document.querySelector("#form").addEventListener("keyup", function (e) {
   if (e.target.dataset.uppercase !== undefined) {
     e.target.value = e.target.value.toUpperCase();
+  }
+});
+*/
+
+let btn = document.querySelector("button");
+let ul = document.querySelector("ul");
+let input = document.querySelector("input");
+let delButtons = document.querySelectorAll(".delete");
+
+btn.addEventListener("click", function () {
+  let inputVal = input.value;
+  let newLi = document.createElement("li");
+  newLi.innerText = inputVal;
+
+  let delBtn = document.createElement("button");
+  delBtn.classList.add("delete");
+  delBtn.innerText = "delete";
+
+  newLi.appendChild(delBtn);
+  ul.appendChild(newLi);
+  input.value = "";
+});
+
+// for (deleteButton of delButtons) {
+//   deleteButton.addEventListener("click", function (e) {
+//     let parent = this.parentElement;
+//     parent.remove();
+//   });
+// }
+
+ul.addEventListener("click", function (e) {
+  let parent = e.target.parentElement;
+  if (e.target.tagName == "BUTTON") {
+    parent.remove();
   }
 });
