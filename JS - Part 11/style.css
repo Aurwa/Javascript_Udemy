@@ -19,3 +19,17 @@ ul {
 li {
   background-color: greenyellow;
 } */
+
+ul {
+  min-width: 100px;
+  min-height: 100px;
+  padding: 30px;
+  border: 1px solid black;
+}
+
+li {
+  min-width: 10px;
+  min-height: 10px;
+  padding: 30px;
+  border: 1px solid red;
+}

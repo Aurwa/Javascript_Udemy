@@ -20,6 +20,7 @@ for (let li of lists) {
 }
 */
 
+/*
 let input = document.querySelector("input");
 let btn = document.querySelector("button");
 let ul = document.querySelector("ul");
@@ -27,12 +28,12 @@ let deleteBtns = document.querySelectorAll(".delete");
 
 btn.addEventListener("click", function () {
   let inpValue = input.value;
-  /*
-  inpValue = ""
 
-  you're trying to clear the value of a variable (inpValue) instead of directly clearing the value of the input element (input.value). Changing the value of inpValue doesn't affect the input field itself because inpValue is just a copy of the input's value, not a reference to the input field.
+  // inpValue = ""
 
-  */
+  // you're trying to clear the value of a variable (inpValue) instead of directly clearing the value of the input element (input.value). Changing the value of inpValue doesn't affect the input field itself because inpValue is just a copy of the input's value, not a reference to the input field.
+
+
   let newTask = document.createElement("li");
   newTask.innerText = inpValue;
 
@@ -49,4 +50,9 @@ ul.addEventListener("click", function (event) {
     let parent = event.target.parentElement;
     parent.remove();
   }
+});
+*/
+
+document.querySelector("#category").addEventListener("click", function (e) {
+  console.log("Parent clicked");
 });
