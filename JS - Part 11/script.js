@@ -43,9 +43,24 @@ function saveData(data) {
   });
 }
 
+// saveData("apna College")
+//   .then(() => {
+//     console.log("Success Promise 1");
+//     return saveData("hello world");
+//   })
+//   .then(() => {
+//     console.log("Success Promise 2");
+//   })
+//   .catch(() => {
+//     console.log("Fail Promise");
+//   });
+
 saveData("apna College")
   .then(() => {
-    console.log("Success Promise");
+    console.log("Success Promise 1");
+    saveData("hello world").then(() => {
+      console.log("Success Promise 2");
+    });
   })
   .catch(() => {
     console.log("Fail Promise");
